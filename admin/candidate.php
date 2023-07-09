@@ -97,8 +97,8 @@
                             <td><?=$fetch_candidate['nama_calon']?></td>
                             <td><img src="../img/candidate/<?=$fetch_candidate['foto_wakil']?>" alt=""></td>
                             <td><?=$fetch_candidate['nama_wakil']?></td>
-                            <td><?=$fetch_candidate['visi']?></td>
-                            <td class="truncate"><?=$fetch_candidate['misi']?></td>
+                            <td><?=$fetch_candidate['visi']?></td>                           
+                            <td class="truncate"><?=$fetch_candidate['misi'];?></td>
                             <td><?=$fetch_candidate['voting_name']?></td>
                             <td><?=$fetch_candidate['partai']?></td>
                             <td class="action"><a href="update_candidate.php?update_candidate=<?=$fetch_candidate['id']?>"><i class="fa-solid fa-pen-to-square"></i></a><a href="candidate.php?delete_candidate=<?=$fetch_candidate['id']?>" class="" onclick="return confirm('Are you sure to delete this candidate?');"><i class="fa-solid fa-trash"></i></a></td>

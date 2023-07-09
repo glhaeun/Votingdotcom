@@ -8,9 +8,9 @@
             <div class="col-md-3">
                 <h4>Links</h4>
                 <ul>
-                    <li><a href="landing_ziven.php">Home</a></li>
+                    <li><a href="landing.php">Home</a></li>
                     <li><a href="tutorial.php">Tutorial</a></li>
-                    <li><a href="contact_us_ziven.php">Kontak</a></li>
+                    <li><a href="contact_us.php">Kontak</a></li>
                 </ul>
             </div>
             <div class="col-md-3">

@@ -6,8 +6,6 @@ use PHPMailer\PHPMailer\POP3;
 
      if(isset($_GET['delete_candidate'])){
         $delete_id = $_GET['delete_candidate'];
-
-
         $query = "SELECT * from candidate WHERE id = ?";
         $get_candidate = $connect->prepare($query);
         $get_candidate -> execute([$delete_id]);
@@ -69,8 +67,8 @@ use PHPMailer\PHPMailer\POP3;
     if(isset($_POST['submit'])){
         $namacalon = $_POST['namacalon'];
         $namawakil = $_POST['namawakil'];
-        $visi = $_POST['visi'];
-        $misi = $_POST['misi'];
+        $visi = str_replace("\n", "<br>", $_POST['visi']);
+        $misi = str_replace("\n", "<br>", $_POST['misi']);
         $votingtipe = $_POST['votingtipe'];
         $parpol = $_POST['parpol'];
 
@@ -202,6 +200,7 @@ if (!empty($namacalon)){
 }
 
 if (!empty($visi)){
+    $visi = str_replace("\n", "<br>", $visi);
     $query = "UPDATE candidate SET visi ='".$visi."' WHERE id = $update";
     $updatedb= $connect->prepare($query);
     $updatedb ->execute();
@@ -209,6 +208,7 @@ if (!empty($visi)){
 }
 
 if (!empty($misi)){
+    $misi = str_replace("\n", "<br>", $misi);
     $query = "UPDATE candidate SET misi ='".$misi."' WHERE id = $update";
     $updatedb= $connect->prepare($query);
     $updatedb ->execute();

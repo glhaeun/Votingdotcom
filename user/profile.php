@@ -214,6 +214,10 @@ h3 {
   margin-left: -1.25rem;
 }
 
+.btn-primary, .nav-link.active {
+  background-color:#BB0C0C !important;
+  border: none;
+}
 
 </style>
 <body>

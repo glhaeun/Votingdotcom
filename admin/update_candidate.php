@@ -100,7 +100,10 @@ $fetch_candidate = $show_candidate->fetch(PDO::FETCH_ASSOC);
                             </div>
                             <div class="form-group">
                                 <label for="misi">Misi</label>
-                                <textarea name="misi" id="misi" cols="10" rows="8"><?=$fetch_candidate['misi']?></textarea>
+                                <?php 
+                                    $misi = str_replace("<br>", "\n", $fetch_candidate['misi']);
+                                ?>
+                                <textarea name="misi" id="misi" cols="10" rows="8"><?=$misi?></textarea>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -154,13 +157,13 @@ $fetch_candidate = $show_candidate->fetch(PDO::FETCH_ASSOC);
 <?php include '../admin_component/php/footer.php';?>
 
 </div>
-<!-- End of Content Wrapper -->
+<!-- End of Content Wrapper --> 
 
 </div>
 
-        <?php 
-            include '../admin_component/php/default.php';
-        ?>
+<?php 
+    include '../admin_component/php/default.php';
+?>
 
         
 </body>

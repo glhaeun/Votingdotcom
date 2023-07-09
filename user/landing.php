@@ -26,7 +26,7 @@
     ?>
 
     <div class="section1">
-        <img class="backgroundSection1" src="../component/image/landing/background1.png">
+        <img class="backgroundSection1" src="../img/web/background.png">
         <div class="container1">
             <div class="subContainer1">
                 <p class="tittleSection1">Vote for a<br>Better Indonesia</p>
@@ -42,7 +42,7 @@
                         </div>
                        
                         <div class="col">
-                            <button type="button" class="btn fs-3 btn-2" onclick="gotoPrediction()">Prediksi</button>
+                            <a class="btn fs-3 btn-2" href='prediction.php'>Prediksi</a>
                         </div>
                     </div>
                     </form>
@@ -58,25 +58,32 @@
     
         if(!isset($_GET['daftarvote']) || $_GET['daftarvote'] == '--'){
             $category_name='--';
-            $number_of_candidate = 1;
-            $number_of_votes_per_candidate = [1];
-            $calon=['Silahkan pilih kategori terlebih dahulu'];
+            $query ="SELECT nama FROM category WHERE status = 'Active'";
+            $show_category = $connect->prepare($query);
+            $show_category -> execute();
+            if ($show_category->rowCount()>0) {
+                if($fetch_category = $show_category->fetch(PDO::FETCH_ASSOC)){
+                    $fetch_category = implode($fetch_category);
+                    $category_name = $fetch_category;
+                } 
+            } 
         } else {
             $category_name = $_GET['daftarvote'];
-            $getting_candidate = $connect->prepare("SELECT nama_calon, nama_wakil FROM candidate WHERE voting_name = ?");
-            $getting_candidate -> execute([$category_name]);
-            $number_of_candidate = $getting_candidate -> rowCount();
-    
-            if ($getting_candidate->rowCount()) {
-                while($fetch_category = $getting_candidate->fetch(PDO::FETCH_ASSOC)){
-                    $calon[] = $fetch_category['nama_calon'];
-                    $wakil[] = $fetch_category['nama_wakil'];
-                }
-            }
-            
         }
-                       
-                       
+            
+        $getting_candidate = $connect->prepare("SELECT nama_calon, nama_wakil FROM candidate WHERE voting_name = ?");
+        $getting_candidate -> execute([$category_name]);
+        $number_of_candidate = $getting_candidate -> rowCount();
+
+        if ($getting_candidate->rowCount()) {
+            while($fetch_category = $getting_candidate->fetch(PDO::FETCH_ASSOC)){
+                $calon[] = $fetch_category['nama_calon'];
+                $wakil[] = $fetch_category['nama_wakil'];
+            }
+        }
+            
+        
+                                
     
         if($category_name != '--') {
             $query = "SELECT * FROM votes WHERE category_name = '$category_name'";
@@ -102,11 +109,11 @@
 
     <div class="section2" id="section2">
         <div class="container">
-            <h2>Prediksi Voting</h2>
-            <p class="subtitle">Lihat prediksi terbaru untuk pemilihan yang akan datang:</p>
+            <h2>Hasil Voting</h2>
+            <p class="subtitle">Lihat hasil voting terbaru:</p>
             <form action="" method="get">
             <select id="daftarvote" class="form-control" name="daftarvote" onchange='this.form.submit()' required>
-                    <option value="--" selected>--</option>
+                    <!-- <option value="--" selected>--</option> -->
                     <?php 
                         $query ="SELECT nama FROM category WHERE status = 'Active'";
                         $show_category = $connect->prepare($query);
@@ -120,6 +127,11 @@
                             <?php
                         } 
                         } 
+                        else {
+                            $noCategory = 1;
+                            $calon = ['Tidak ada pemilihan'];
+                            $number_of_votes_per_candidate = [1];
+                        }
                     ?>
             </select>
             </form>
@@ -159,17 +171,14 @@
                             </div>
                             <div class='visiMisi'>
                                 <?php
-                                    $visiMisi = $data['visi'];
-                                    $visi = explode("<br>",strCut('Visi:', 'Misi:', $visiMisi));
-                                    $visi = $visi[1];
-                                    $misi = explode("<br>",strCut('Misi:', '0000', $visiMisi));
+                                    $visi = $data['visi'];
+                                    $misi = explode("<br>", $data['misi']);;
                                 ?>
                                 <h2 class='fs-3 visiTitle'>Visi:</h2>
                                 <p class='fs-4 visiContent'><?= $visi ?></p>
                                 <h2 class='fs-3 misiTitle'>Misi:</h2>
                                 <ul class='fs-5 misiContent'>
                                     <?php
-                                        unset($misi[0]);
                                         foreach($misi as $data) {
                                             if($data != '') echo "<li>$data</li>";
                                         }
@@ -182,7 +191,7 @@
                 } else {
                     ?>
                         <swiper-slide>
-                            <h2 style='padding: 100px'>Silahkan pilih kategori untuk melihat visi misi para kandidat</h2>
+                            <h2 style='padding: 100px'><?php if(isset($noCategory)) echo "Sedang tidak ada pemilihan saat ini"; else echo "Kategori tidak memiliki kandidat"; ?></h2>
                         </swiper-slide>
                     <?php
                 }
@@ -194,19 +203,19 @@
 
     <div class="subSection1">
         <div class="col subSectionItem">
-            <img class="backgroundSection1" src="../component/image/landing/background1.png">
-            <h2>Cara memilih?</h2>
-            <p class="fs-6">Lihat langkah-langkah yang harus dilakukan untuk melakukan pemilihan melalui website ini.</p>
+            <img class="backgroundSection1" src="../img/web/background.png">
+            <h2>Belum punya akun?</h2>
+            <p class="fs-6">Daftarkan akunmu sekarang! Cukup menggunakan KTP dan Email</p>
             <a href="tutorial.php" class="btn btn-1">Tutorial</a>
         </div>
         <div class="col subSectionItem">
-            <img class="backgroundSection1" src="../component/image/landing/background1.png">
-            <h2>Belum punya akun?</h2>
-            <p class="fs-6">Daftarkan akunmu sekarang! Cukup menggunakan KTP dan Email</p>
+            <img class="backgroundSection1" src="../img/web/background.png">
+            <h2>Cara memilih?</h2>
+            <p class="fs-6">Lihat langkah-langkah yang harus dilakukan untuk melakukan pemilihan melalui website ini.</p>
             <a href="register.php" class="btn btn-1">Buat Akun</a>
         </div>
         <div class="col subSectionItem subSectionItem2">
-            <img class="backgroundSection1" src="../component/image/landing/background1.png">
+            <img class="backgroundSection1" src="../img/web/background.png">
             <h2>Pilih sekarang?</h2>
             <p class="fs-6">Jangan lupa untuk memilih kandidat yang terbaik bagi Indonesia!</p>
             <a href="vote.php" class="btn btn-1">Vote</a>
@@ -219,7 +228,7 @@
             <div class="reasons">
             <div class="reason">
                 <div class="divContainer">
-                    <img src="../component/image/landing/reason1.png" alt="Reason 1">
+                    <img src="../img/web/reason1.png" alt="Reason 1">
                 </div>
                 
                 <div class="reason-content">
@@ -229,7 +238,7 @@
             </div>
             <div class="reason">
                 <div class="divContainer">
-                    <img src="../component/image/landing/reason2.png" alt="Reason 2">
+                    <img src="../img/web/reason2.png" alt="Reason 2">
                 </div>
                 <div class="reason-content">
                 <h3>Partisipasi</h3>
@@ -238,7 +247,7 @@
             </div>
             <div class="reason">
                 <div class="divContainer">
-                    <img src="../component/image/landing/reason3.png" alt="Reason 3">
+                    <img src="../img/web/reason3.png" alt="Reason 3">
                 </div>
                 <div class="reason-content">
                 <h3>Menjamin Akuntabilitas</h3>

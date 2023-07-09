@@ -113,8 +113,8 @@ include '../admin_component/php/naivebayes.php';
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2 chart-box" id="printable">
+                                <div class="card-body" style='display:flex; align-items: center; flex-flow: column;'>
+                                    <div class="chart-pie pt-4 pb-2 chart-box" style='width: 40%; display: flex; justify-content: center' id="printable">
                                         <canvas style="height:300px; width:300px;" id="pieChart"></canvas>
                                     </div>
                                     <?php
