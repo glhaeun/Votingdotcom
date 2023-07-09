@@ -9,8 +9,10 @@
                 <h4>Links</h4>
                 <ul>
                     <li><a href="landing.php">Home</a></li>
+                    <li><a href="prediction.php">Prediksi</a></li>
                     <li><a href="tutorial.php">Tutorial</a></li>
                     <li><a href="contact_us.php">Kontak</a></li>
+                    
                 </ul>
             </div>
             <div class="col-md-3">

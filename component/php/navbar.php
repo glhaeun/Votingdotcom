@@ -67,6 +67,9 @@
                         <a href="landing.php" style="text-decoration: none;"><div class="nav-item">HOME</div></a>
                     </div>
                     <div class="nav-menu">
+                        <a href="prediction.php" style="text-decoration: none;"><div class="nav-item">PREDICTION</div></a>
+                    </div>
+                    <div class="nav-menu">
                     <a href="tutorial.php" style="text-decoration: none;"><div class="nav-item">TUTORIAL</div></a>
                     </div>
                     <div class="nav-menu">

@@ -14,60 +14,25 @@
     include "../admin_component/php/naivebayes.php";
     include "../admin_component/php/script.php";
     
-
-
-                           
-        $calon = array();
-        $wakil = array();
+    if(isset($_POST['prevote'])){
+        $tableName = $_POST['prevote'];
     
-        if(!isset($_GET['daftarvote']) || $_GET['daftarvote'] == '--'){
-            $category_name='--';
-            $query ="SELECT nama FROM category WHERE status = 'Active'";
-            $show_category = $connect->prepare($query);
-            $show_category -> execute();
-            if ($show_category->rowCount()>0) {
-                if($fetch_category = $show_category->fetch(PDO::FETCH_ASSOC)){
-                    $fetch_category = implode($fetch_category);
-                    $category_name = $fetch_category;
-                } 
-            } 
-        } else {
-            $category_name = $_GET['daftarvote'];
-        }
-            
-        $getting_candidate = $connect->prepare("SELECT nama_calon, nama_wakil FROM candidate WHERE voting_name = ?");
-        $getting_candidate -> execute([$category_name]);
-        $number_of_candidate = $getting_candidate -> rowCount();
-
-        if ($getting_candidate->rowCount()) {
-            while($fetch_category = $getting_candidate->fetch(PDO::FETCH_ASSOC)){
-                $calon[] = $fetch_category['nama_calon'];
-                $wakil[] = $fetch_category['nama_wakil'];
-            }
-        }
-            
+        if($tableName!=""){
+            $kandidat = getCandidateNames($tableName);
+            $hasil = posteriorProbability($tableName, $kandidat);
         
-                                
-    
-        if($category_name != '--') {
-            $query = "SELECT * FROM votes WHERE category_name = '$category_name'";
-            $totalvotes = $connect->prepare($query);
-            $totalvotes -> execute();
-            $number_of_votes = $totalvotes -> rowCount();
-            $number_of_votes_per_candidate = array();
-            for($i=0; $i<sizeof($calon);$i++) {
-                $calon_name = $calon[$i];
-                $query = "SELECT * FROM votes WHERE choose = '$calon_name'";
-                $countingvotes = $connect->prepare($query);
-                $countingvotes -> execute([]);
-                if ($countingvotes -> rowCount()>0) {
-                    $number_of_votes_per_candidate[] = $countingvotes -> rowCount();
-                } else {
-                $number_of_votes_per_candidate[] = 0;
-                }
+            $candidate = array();
+            $prob = array();
+        
+            foreach($hasil as $key => $value){
+        
+                array_push($candidate, $key);
+                array_push($prob, $value);
+        
             }
-
-        } 
+        }
+        
+    }
     ?>
 
 
@@ -159,28 +124,24 @@
         // });
 
         var all = <?php echo json_encode($hasil)?>;
-            var labels = <?php echo json_encode($candidate)?>;
-        
+        var labels = <?php echo json_encode($candidate)?>;
+    
 
-            
-            var ctx = document.getElementById('pieChart').getContext('2d');
-            var myChart = new Chart (ctx,{
-                type: 'pie',
-                data: {
-                labels,
-                datasets: [{
-                    label: 'Probabilitas',
-                    data: <?php echo json_encode($prob)?>,
-                    backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
-                    ],
-                    hoverOffset: 4
-                }]
-                }
+        
+        var ctx = document.getElementById('predictionChart').getContext('2d');
+        var myChart = new Chart (ctx,{
+            type: 'pie',
+            data: {
+            labels,
+            datasets: [{
+                label: 'Probabilitas',
+                data: <?php echo json_encode($prob)?>,
+                backgroundColor: ["#bb0c0c", "#f05a5a", "#9c0202", "#ff1c8e"],
+                hoverOffset: 4
+            }]
+            }
         }
-            );
+        );
 
     </script>
 </body>
