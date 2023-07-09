@@ -7,84 +7,13 @@
         $category ='PILPRES2023';
     }
 
-    if(isset($_POST['vote'])){
-    
-        $candidate_id = $_POST['candidate_id'];
-        $user_id = $_SESSION['user_id'];
-    
-        $query = "SELECT voting_name, nama_calon FROM candidate WHERE id = $candidate_id ";
-        $get_candidatename = $connect -> prepare($query);
-        $get_candidatename -> execute ();
-        $fetch_candidatename = $get_candidatename -> fetch(PDO::FETCH_ASSOC);
-    
-        $candidate_name = $fetch_candidatename['nama_calon'];
-        $category_name = $fetch_candidatename['voting_name'];
-    
-        $query = "SELECT NIK, nama FROM users WHERE user_id = $user_id ";
-        $get_user = $connect -> prepare($query);
-        $get_user -> execute ();
-        $fetch_user = $get_user -> fetch(PDO::FETCH_ASSOC);
-    
-        $NIK = $fetch_user['NIK'];
-        $nama = $fetch_user['nama'];
-    
-        $date = date('Y-m-d');
-    
-        $query = "SELECT * FROM votes WHERE user_id = $user_id AND category_name = '$category_name'";
-        $check_if_ever_vote = $connect -> prepare($query);
-        $check_if_ever_vote -> execute ();
-    
-    
-    
-        $r = $check_if_ever_vote->rowCount();
-    
-    
-        // echo "<div class='alert alert-danger' role='alert'>$user_id $category_name</div>";
-    
-    
-        if($check_if_ever_vote->rowCount()>0){
-            // echo "<div class='alert alert-danger' role='alert'>You have already voted</div>";
-            ?>
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            <script>
-                Swal.fire({
-                    icon:'warning',
-                    title:'You have already voted, you cannot vote again!',
-                }).then(function(){
-                    window.location = "landing.php";
-                });
-                    
-            </script>
-            <?php
-        } else {
-            $query = "INSERT INTO votes (category_name, user_id, choose, NIK, user_nama, voting_time) VALUES ( ?, ?, ?, ?, ?, ?)";
-            $check_if_ever_vote = $connect -> prepare($query);
-            $check_if_ever_vote -> execute ([$category_name, $user_id, $candidate_name, $NIK, $nama, $date]);
-            // echo "<div class='alert alert-danger' role='alert'>Successfully Voted</div>";
-            ?>
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            <script>
-                Swal.fire({
-                    icon:'success',
-                    title:'Vote has been recorded',
-                }).then(function(){
-                    window.location = "landing.php";
-                })
-            </script>
-            <?php
-        }
-
-    }
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once("../component/php/head.php");
- ?>
     <title>Voting Page</title>
+    <?php include "../component/php/head.php";?>
     <link rel="stylesheet" href="../component/style/votingPage.css">
     <script src="../component/JS/votingPage.js" defer></script>
     <style>
@@ -102,7 +31,78 @@
     </style>
 </head>
 <body>
-<?php require_once("../component/php/navbar.php");
+<?php
+if(isset($_POST['vote'])){
+
+    
+    $candidate_id = $_POST['candidate_id'];
+    $user_id = $_SESSION['user_id'];
+
+    $query = "SELECT voting_name, nama_calon FROM candidate WHERE id = $candidate_id ";
+    $get_candidatename = $connect -> prepare($query);
+    $get_candidatename -> execute ();
+    $fetch_candidatename = $get_candidatename -> fetch(PDO::FETCH_ASSOC);
+
+    $candidate_name = $fetch_candidatename['nama_calon'];
+    $category_name = $fetch_candidatename['voting_name'];
+
+    $query = "SELECT NIK, nama FROM users WHERE user_id = $user_id ";
+    $get_user = $connect -> prepare($query);
+    $get_user -> execute ();
+    $fetch_user = $get_user -> fetch(PDO::FETCH_ASSOC);
+
+    $NIK = $fetch_user['NIK'];
+    $nama = $fetch_user['nama'];
+
+    $date = date('Y-m-d');
+
+    $query = "SELECT * FROM votes WHERE user_id = $user_id AND category_name = '$category_name'";
+    $check_if_ever_vote = $connect -> prepare($query);
+    $check_if_ever_vote -> execute ();
+
+
+
+    $r = $check_if_ever_vote->rowCount();
+
+
+    // echo "<div class='alert alert-danger' role='alert'>$user_id $category_name</div>";
+
+
+    if($check_if_ever_vote->rowCount()>0){
+        // echo "<div class='alert alert-danger' role='alert'>You have already voted</div>";
+        ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+        <script>
+            Swal.fire({
+                icon:'warning',
+                title:'You have already voted, you cannot vote again!',
+            }).then(function(){
+                window.location = "landing.php";
+            });
+        </script>
+        <?php
+    } else {
+        $query = "INSERT INTO votes (category_name, user_id, choose, NIK, user_nama, voting_time) VALUES ( ?, ?, ?, ?, ?, ?)";
+        $check_if_ever_vote = $connect -> prepare($query);
+        $check_if_ever_vote -> execute ([$category_name, $user_id, $candidate_name, $NIK, $nama, $date]);
+        // echo "<div class='alert alert-danger' role='alert'>Successfully Voted</div>";
+        ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+        <script>
+            Swal.fire({
+                icon:'success',
+                title:'Vote has been recorded',
+            }).then(function(){
+                window.location = "landing.php";
+            })
+        </script>
+        <?php
+    }
+
+}
+?>
+<?php
+require_once("../component/php/navbar.php");
  ?>
     <div class="dropdown">
     <form method="get" id="form">

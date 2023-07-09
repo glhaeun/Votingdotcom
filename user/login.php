@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html>
-<?php
-    include "../component/php/connect.php";
-    require_once("../component/php/head.php");
-    require_once("../component/php/navbar.php");
-?>
-
+<html lang="en">
 <head>
-<?php require_once("../component/php/head.php");?>
-<link rel="stylesheet" href="../component/style/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <?php include "../component/php/head.php";?>
+    <link rel="stylesheet" href="../component/style/login.css">
+    
 </head>
+<?php include "../component/php/connect.php";?>
+
+<body>
 
 <?php
     include "../component/php/sendemail.php";
@@ -110,26 +110,11 @@
         }
     }
 ?>
-
-
-<body>
 <?php require_once("../component/php/navbar.php");?>
-    <?php if (isset($message) && count($message) > 0 && !$_SESSION['hide_message']) : ?>
-        <div class="message-container">
-            <?php
-            foreach ($message as $message) {
-                echo '
-                <div id="mssg">
-                    <span>' . $message . '</span>
-                    <i class="fas fa-times" onclick="closeMessageContainer();"></i>
-                </div>
-                ';
-            }
-            ?>
-        </div>
-    <?php endif; ?>
+
+
         
-    <main>
+<main>
         <form action="login.php" method="post">
             <h2>MASUK</h2>
 
@@ -262,5 +247,7 @@
         }
     </script>
     
+    
 </body>
 </html>
+

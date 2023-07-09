@@ -1,5 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <?php include "../component/php/head.php";?>
+    <link rel="stylesheet" href="../component/style/styleForgotPassword.css">
+</head>
+<?php include "../component/php/connect.php";?>
+
+
+
+<body>
+    
 <?php
-    include "../component/php/connect.php";
     include '../component/php/sendemail.php';
 
     $mailSent = false;
@@ -77,17 +90,6 @@
         }
     }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php   require_once("../component/php/head.php"); ?>
-    <link rel="stylesheet" href="../component/style/styleForgotPassword.css">
-    <title></title>
-
-</head>
-
-<body>
     <?php   require_once("../component/php/navbar.php"); ?>
 
     <?php if (isset($message) && count($message) > 0 && !$_SESSION['hide_message']) : ?>
