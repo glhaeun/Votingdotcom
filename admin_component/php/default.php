@@ -23,3 +23,24 @@
 
     <!-- Page level custom scripts -->
     <script src="../admin_component/js/demo/datatables-demo.js"></script>
+
+    
+<?php
+    if(isset($_GET['logout'])){
+        session_destroy(); 
+       ?>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+        swal({
+            title: "Logout Successfully!",
+            text: "",
+            icon: "success",
+            
+        }).then(function() {
+            window.location = "login.php";
+        });      
+        </script>
+        <?php
+        
+        } 
+?>
