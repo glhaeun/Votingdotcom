@@ -108,7 +108,11 @@ require_once("../component/php/navbar.php");
     <form method="get" id="form">
         <select id="" class="dropdown select" name="category"  onchange="this.form.submit()" required>
         <?php 
-        $query ="SELECT nama FROM category WHERE status ='Active'";
+        date_default_timezone_set('Asia/Jakarta');
+
+        $currentDate = date('Y-m-d');
+
+        $query ="SELECT nama FROM category WHERE status ='Active' AND start_tggl <= '$currentDate' AND end_tggl >= '$currentDate'";
         $show_category = $connect->prepare($query);
         $show_category -> execute();
         if ($show_category->rowCount()>0) {
