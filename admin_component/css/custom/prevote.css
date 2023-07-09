@@ -1,0 +1,30 @@
+.row {
+    display: grid;
+}
+
+#import-form {
+    display: flex;
+}   
+
+.chart-pie {
+    display: flex;
+    justify-content: center;
+}
+
+#tableDiv{
+display: flex;
+justify-content: center;
+}
+
+.chartjs-table,th,td {
+border-collapse: collapse;
+border: 1px solid gray;
+padding: 10px;
+}
+
+.chartjs-thead {
+font-weight: bold;
+}
+.chartjs-tbody {
+text-align: center;
+}

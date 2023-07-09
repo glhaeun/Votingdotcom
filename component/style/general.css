@@ -1,0 +1,53 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #cecece;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #bb0c0c;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cb3838;
+  }
+  
+  @font-face {
+    font-family: "Jarvish Blurry";
+    src: url("../../component/font/jarvishBlurry.ttf");
+  }
+  
+  .btn-1 {
+    background-color: #bb0c0c;
+    border-radius: 4px;
+    color: white;
+    padding: 8px 12px;
+  }
+  
+  .btn-2 {
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+    padding: 8px 12px;
+  }
+  
+  .btn-1:hover {
+    transform: scale(0.9);
+    transition: transform 0.2s;
+    background-color: #bb0c0c;
+    color: white;
+  }
+  
+  .btn-2:hover {
+    transform: scale(0.9);
+    transition: transform 0.2s;
+    background-color: white;
+    color: black;
+  }
+  

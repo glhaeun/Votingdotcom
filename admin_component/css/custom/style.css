@@ -1,0 +1,41 @@
+/* category page*/
+
+.category-row {
+    justify-content: center;
+}
+
+.dataTables_filter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+
+}
+
+/*category add form*/
+
+#candidate .form-group, .select-group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#candidate .form-group select, .select-group select{
+    width: 90%;
+}
+
+.select-group {
+    margin-bottom: 1rem;
+}
+#candidate .form-group span{
+    align-self: center;
+}
+
+.row {
+    justify-content: center;
+}
+
+

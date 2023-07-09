@@ -1,0 +1,21 @@
+#candidate .form-group {
+    display: flex;
+    justify-content: space-around;
+}
+#candidate .form-group select{
+    width: 90%;
+}
+#candidate .form-group span{
+    align-self: center;
+}
+    textarea { width: 100%;
+    resize:none; }
+
+img {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.foto {
+    display: grid;
+}

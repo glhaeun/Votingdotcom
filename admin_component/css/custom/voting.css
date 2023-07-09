@@ -1,0 +1,35 @@
+.chart-pie {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.chart-pie-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#pieChart {
+display: inline-block;
+position: relative;
+}
+
+#tableDiv{
+display: flex;
+justify-content: center;
+}
+
+.chartjs-table,th,td {
+border-collapse: collapse;
+border: 1px solid gray;
+padding: 10px;
+}
+
+.chartjs-thead {
+font-weight: bold;
+}
+.chartjs-tbody {
+text-align: center;
+}
