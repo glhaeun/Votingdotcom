@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Welcome to Voting.com</title>
+    <title>Selamat datang di Voting.com</title>
     <?php require_once("../component/php/head.php"); ?>
     <link rel="stylesheet" href="../component/style/styleLanding.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -29,10 +29,10 @@
         <img class="backgroundSection1" src="../img/web/background.png">
         <div class="container1">
             <div class="subContainer1">
-                <p class="tittleSection1">Vote for a<br>Better Indonesia</p>
-                <p class="tittle2Section1">#noGolput</p>
+                <p class="tittleSection1">Pilih untuk<br>Indonesia yang lebih baik</p>
+                <p class="tittle2Section1">#JanganGolput</p>
             </div>
-            <p class="text-center fs-1 subTittleSection1">Selamat datang di platform kami!</p>
+            <p class="text-center fs-1 subTittleSection1">Selamat datang di website kami!</p>
             <div style="max-width: 500px; margin: 0 auto;">
                 <div class="container text-center">
                     <form method="post">
@@ -109,8 +109,8 @@
 
     <div class="section2" id="section2">
         <div class="container">
-            <h2>Hasil Voting</h2>
-            <p class="subtitle">Lihat hasil voting terbaru:</p>
+            <h2>Hasil Pemungutan Suara</h2>
+            <p class="subtitle">Lihat hasil pemungutan suara terbaru:</p>
             <form action="" method="get">
             <select id="daftarvote" class="form-control" name="daftarvote" onchange='this.form.submit()' required>
                     <!-- <option value="--" selected>--</option> -->
@@ -206,19 +206,19 @@
             <img class="backgroundSection1" src="../img/web/background.png">
             <h2>Belum punya akun?</h2>
             <p class="fs-6">Daftarkan akunmu sekarang! Cukup menggunakan KTP dan Email</p>
-            <a href="tutorial.php" class="btn btn-1">Tutorial</a>
+            <a href="register.php" class="btn btn-1">Buat Akun</a>
         </div>
         <div class="col subSectionItem">
             <img class="backgroundSection1" src="../img/web/background.png">
             <h2>Cara memilih?</h2>
             <p class="fs-6">Lihat langkah-langkah yang harus dilakukan untuk melakukan pemilihan melalui website ini.</p>
-            <a href="register.php" class="btn btn-1">Buat Akun</a>
+            <a href="tutorial.php" class="btn btn-1">Tutorial</a>
         </div>
         <div class="col subSectionItem subSectionItem2">
             <img class="backgroundSection1" src="../img/web/background.png">
             <h2>Pilih sekarang?</h2>
-            <p class="fs-6">Jangan lupa untuk memilih kandidat yang terbaik bagi Indonesia!</p>
-            <a href="vote.php" class="btn btn-1">Vote</a>
+            <p class="fs-6">Jangan lupa untuk memilih kandidat terbaik bagi Indonesia!</p>
+            <a href="vote.php" class="btn btn-1">Pilih</a>
         </div>
     </div>
 
@@ -232,7 +232,7 @@
                 </div>
                 
                 <div class="reason-content">
-                <h3 class="fs-2">Gunakan Hak Anda</h3>
+                <h3 class="fs-2">Gunakan Hak Suara Anda</h3>
                 <p class="fs-6">Memilih adalah hak fundamental dalam masyarakat demokratis. Ini memungkinkan Anda ikut serta dalam proses pengambilan keputusan dan membentuk masa depan negara Anda.</p>
                 </div>
             </div>

@@ -6,12 +6,12 @@
                 <p>Kami adalah mahasiswa UPH intake 2021 kelas 21TI2 <br>yang sedang mengerjakan uas IMK!</p>
             </div>
             <div class="col-md-3">
-                <h4>Links</h4>
+                <h4>Tautan</h4>
                 <ul>
-                    <li><a href="landing.php">Home</a></li>
+                    <li><a href="landing.php">Halaman Utama</a></li>
                     <li><a href="prediction.php">Prediksi</a></li>
                     <li><a href="tutorial.php">Tutorial</a></li>
-                    <li><a href="contact_us.php">Kontak</a></li>
+                    <li><a href="contact_us.php">Hubungi Kami</a></li>
                     
                 </ul>
             </div>
@@ -24,7 +24,7 @@
     </div>
     <div class="bottom-bar">
         <div class="container">
-            <p>&copy; 2023 Voting.com. All rights reserved.</p>
+            <p>&copy; 2023 Voting.com. Hak cipta milik Kami.</p>
         </div>
     </div>
 </footer>

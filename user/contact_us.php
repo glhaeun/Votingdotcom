@@ -80,7 +80,7 @@
 
     <div class="section">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2>Hubungi Kami</h2>
             <?php
                 if(isset($_POST['submit'])) {
                     if(sendMsg($_POST['email'], $_POST['name'], $_POST['message'])) {
@@ -108,19 +108,19 @@
             ?>
             <form action="#" method="post">
                 <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <label for="name">Nama Anda</label>
+                    <input type="text" id="name" name="name" placeholder="Tolong tuliskan nama Anda" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="email">Email Anda</label>
+                    <input type="text" id="email" name="email" placeholder="Tolong tuliskan email Anda" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Enter your message" rows="6" required></textarea>
+                    <label for="message">Masukan Anda</label>
+                    <textarea id="message" name="message" placeholder="Tolong tuliskan masukan Anda" rows="6" required></textarea>
                 </div>
                 <div class="submit-button">
-                    <input type="submit" name='submit' value="Send Message">
+                    <input type="submit" name='submit' value="Kirim">
                 </div>
             </form>
         </div>

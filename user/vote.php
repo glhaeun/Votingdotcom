@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Voting Page</title>
+    <title>Voting.com</title>
     <?php include "../component/php/head.php";?>
     <link rel="stylesheet" href="../component/style/votingPage.css">
     <script src="../component/JS/votingPage.js" defer></script>
@@ -75,7 +75,7 @@ if(isset($_POST['vote'])){
         <script>
             Swal.fire({
                 icon:'warning',
-                title:'You have already voted, you cannot vote again!',
+                title:'Anda sudah memilih sebelumnya. Anda tidak dapat melakukan pemilihan lagi!',
             }).then(function(){
                 window.location = "landing.php";
             });
@@ -91,7 +91,7 @@ if(isset($_POST['vote'])){
         <script>
             Swal.fire({
                 icon:'success',
-                title:'Vote has been recorded',
+                title:'Pilihan Anda sudah tercatat',
             }).then(function(){
                 window.location = "landing.php";
             })
@@ -169,7 +169,7 @@ require_once("../component/php/navbar.php");
                         <h5>Wakil <?=$fetch_candidates['nama_jabatan']?></h5>
                         </div>
                         <div class="btn">
-                        <input type="submit" value="Vote Now" name="vote" onclick="return confirm('Are you sure?')">
+                        <input type="submit" value="Pilih" name="vote" onclick="return confirm('Are you sure?')">
                         </div>
                         </form></div>
                         <?php

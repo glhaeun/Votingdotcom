@@ -48,7 +48,7 @@
 									<input type="text" name="otp" placeholder="Masukkan Kode OTP" class="box" required>
 								</div>
 							<!-- <div class="header"></div> -->
-							<input type="submit" name="submit_otp" value="Submit" class="btn">
+							<input type="submit" name="submit_otp" value="Kirim" class="btn">
 					<?php 
 						} 
 						else if ($_SESSION['success'] ==2) {
@@ -57,7 +57,7 @@
                             <script>
                             swal({
                                 title: "Berhasil!",
-                                text: "Anda Berhasil Mendaftar Akun. Akun anda akan diverifikasi dalam 24 jam.",
+                                text: "Anda berhasil mendaftarkan Akun Anda. Akun Anda akan diverifikasi dalam 24 jam.",
                                 icon: "success",
                                 
                             }).then(function() {
@@ -74,7 +74,7 @@
                             <script>
                             swal({
                                 title: "Gagal!",
-                                text: "Kode verifikasi tidak tepat. Silakan ulang registrasi.",
+                                text: "Kode verifikasi tidak tepat. Silahkan melakukan registrasi ulang.",
                                 icon: "error",
                                 
                             });      
@@ -102,7 +102,7 @@
 								<input type="text" name="otp" placeholder="Masukkan Kode OTP" class="box" required>
 								<!-- class="login-input" -->
 							</div>
-						<div class="header"><input type="submit" name="submit_otp" value="Submit" class="btn"></div>
+						<div class="header"><input type="submit" name="submit_otp" value="Kirim" class="btn"></div>
 						<!-- class="btnSubmit" -->
 				<?php 
 					} 
@@ -112,7 +112,7 @@
                         <script>
                         swal({
                             title: "Berhasil!",
-                            text: "Anda Berhasil login!",
+                            text: "Anda berhasil masuk!",
                             icon: "success",
                             
                         }).then(function() {
@@ -129,7 +129,7 @@
                             <script>
                             swal({
                                 title: "Gagal!",
-                                text: "Kode verifikasi anda salah. Silakan login ulang",
+                                text: "Kode verifikasi anda salah. Silakan masuk ulang",
                                 icon: "error",
                                 
                             }).then(function() {

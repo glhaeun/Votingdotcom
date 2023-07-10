@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Welcome to Voting.com</title>
+    <title>Voting.com</title>
     <?php require_once("../component/php/head.php"); ?>
     <link rel="stylesheet" href="../component/style/stylePrediction.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -38,7 +38,7 @@
 
     <div class="section2" id="section2">
         <div class="container">
-            <h2>Prediksi Voting</h2>
+            <h2>Prediksi Hasil Pemungutan Suara</h2>
             <p class="subtitle">Lihat prediksi terbaru untuk pemilihan yang akan datang:</p>
             <form action="" method="post">
                 <select id="prevote" class="form-control" name="prevote" onchange="this.form.submit()">

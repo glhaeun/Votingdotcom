@@ -12,7 +12,7 @@ include '../component/php/connect.php';
 <html lang="en">
     
 <head>
-    <title>Welcome to Voting.com</title>
+    <title>Voting.com</title>
     <?php require_once("../component/php/head.php"); ?>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -248,7 +248,7 @@ include '../component/php/profile.php';
 						<div class="img-circle text-center">
                         <i class="fa fa-user" style="color:#BB0C0C;"></i>
 						</div>
-						<h5 class="text-center">Hi,<?=$user_nama?> </h5>
+						<h5 class="text-center">Hai,<?=$user_nama?> </h5>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
@@ -263,7 +263,7 @@ include '../component/php/profile.php';
 				</div>
 				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
 					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
-						<h3 class="mb-4">Account Settings</h3>
+						<h3 class="mb-4">Perubahan Data Akun</h3>
                         <form action="" method="POST">
 						<div class="row">
 							<div class="col-md-6">
@@ -296,13 +296,13 @@ include '../component/php/profile.php';
 							</div>
 						</div>
 						<div>
-                            <input id="submit" type="submit" value="Update" name="update_profile" class="btn btn-primary">
-							<input type="submit" value="Cancel" name="cancel_profile" class="btn btn-light">
+                            <input id="submit" type="submit" value="Ubah" name="update_profile" class="btn btn-primary">
+							<input type="submit" value="Batal" name="cancel_profile" class="btn btn-light">
 						</div>
                     </form>
                     </div>
 					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
-						<h3 class="mb-4">Pengaturan Kata Sandi</h3>
+						<h3 class="mb-4">Perubahan Kata Sandi</h3>
                         <form action="" method="POST">
 						<div class="row">
 							<div class="col-md-6">
@@ -327,8 +327,8 @@ include '../component/php/profile.php';
 							</div>
 						</div>
 						<div>
-							<input id="submit" type="submit" value="Update" name="update_password" class="btn btn-primary">
-							<input type="submit" value="Cancel" name="cancel_password" class="btn btn-light">
+							<input id="submit" type="submit" value="Ubah" name="update_password" class="btn btn-primary">
+							<input type="submit" value="Batal" name="cancel_password" class="btn btn-light">
 						</div>
                         </form>
                     </div>

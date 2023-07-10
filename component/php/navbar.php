@@ -53,7 +53,7 @@
                 <?php
                     if (empty($user_id)) {
                         ?>
-                        <a href="login.php" style="text-decoration: none;"><div class="nav-item">LOGIN</div></a>
+                        <a href="login.php" style="text-decoration: none;"><div class="nav-item">MASUK</div></a>
                         <?php
                     } 
                     else {  
@@ -64,21 +64,21 @@
                     ?>
                     </div>
                     <div class="nav-menu">
-                        <a href="landing.php" style="text-decoration: none;"><div class="nav-item">HOME</div></a>
+                        <a href="landing.php" style="text-decoration: none;"><div class="nav-item">HALAMAN UTAMA</div></a>
                     </div>
                     <div class="nav-menu">
-                        <a href="prediction.php" style="text-decoration: none;"><div class="nav-item">PREDICTION</div></a>
+                        <a href="prediction.php" style="text-decoration: none;"><div class="nav-item">PREDIKSI</div></a>
                     </div>
                     <div class="nav-menu">
                     <a href="tutorial.php" style="text-decoration: none;"><div class="nav-item">TUTORIAL</div></a>
                     </div>
                     <div class="nav-menu">
-                        <a href="contact_us.php" style="text-decoration: none;"><div class="nav-item">CONTACT US</div></a>
+                        <a href="contact_us.php" style="text-decoration: none;"><div class="nav-item">HUBUNGI KAMI</div></a>
                     </div>
                     <?php
                     if (!empty($user_id)) {
                         ?>
-                        <div class="nav-item"><a href="landing.php?logout=<?=$user_id?>" style="text-decoration: none;">LOGOUT</a></div>
+                        <div class="nav-item"><a href="landing.php?logout=<?=$user_id?>" style="text-decoration: none;">KELUAR</a></div>
                         <?php
                     } 
                     else {  
