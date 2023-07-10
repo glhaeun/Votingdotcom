@@ -8,6 +8,10 @@
     include '../component/php/sendemail.php';
     $_SESSION['r_status'] = 0;
     $_SESSION['success'] = 1;
+    $tempDirectory = 'temp_images/';
+
+
+    
 
     if (isset($_POST['register'])){
         
@@ -17,15 +21,12 @@
         $_SESSION['data']['nomor'] = $nomor = htmlspecialchars(trim($_POST['nomor']));
         $_SESSION['data']['NIK'] = $NIK = htmlspecialchars(trim($_POST['NIK']));
 
-        $_SESSION['data']['fotoKTP'] = $fotoKTP = $_FILES['fotoKTP']['name'];
-        $_SESSION['data']['fotoKTP_size'] = $fotoKTP_size= $_FILES['fotoKTP']['size'];
-        $_SESSION['data']['fotoKTP_tmpname'] = $fotoKTP_tmpname= $_FILES['fotoKTP']['tmp_name'];
-        $_SESSION['data']['fotoKTP_folder'] = $fotoKTP_folder= '../img/user/'.$fotoKTP; 
+        //kt simpan filenya di folder sementara dulu cuz klo gk imgnya hilang
+        // yg tersimpan di session nnti cuman string bukan imgnya sendiri --> error td karena ini wkwk
 
-        $_SESSION['data']['fotoWajah'] = $fotoWajah = $_FILES['fotoWajah']['name'];
-        $_SESSION['data']['fotoWajah'] =$fotoWajah_size= $_FILES['fotoWajah']['size'];
-        $_SESSION['data']['fotoWajah'] = $fotoWajah_tmpname= $_FILES['fotoWajah']['tmp_name'];
-        $_SESSION['data']['fotoWajah'] =$fotoWajah_folder= '../img/user/'.$fotoWajah; 
+        $_SESSION['fotoWajah']  = $_FILES['fotoWajah']['name'];
+        $_SESSION['fotoWajah_size'] = $_FILES['fotoWajah']['size'];
+        $_SESSION['fotoWajah_tmpname'] = $_FILES['fotoWajah']['tmp_name'];
 
         $select_users = $connect->prepare("SELECT * FROM users WHERE email = ? ");
         $select_users -> execute([$email]);
@@ -41,12 +42,21 @@
         } else {
 
             if($select_users2-> rowCount() > 0 ) {
-                // $message[]='NIK ini sudah teregistrasi';
+             $message[]='NIK ini sudah teregistrasi';
             }else if($select_users-> rowCount() > 0) {
                 $message[]= 'Email ini sudah teregistrasi';
             } else if ($select_users1 -> rowCount() > 0) {
                 $message[]= 'Nomor ini sudah teregistrasi';
             } else {
+
+            if (!file_exists($tempDirectory)) {
+                mkdir($tempDirectory, 0777, true);
+            }
+
+                $tempFilePath = $_FILES['fotoKTP']['tmp_name'];
+                $_SESSION['nama_foto_KTP'] = $NIK."_fotoKTP_".$_FILES['fotoKTP']['name'];
+                $targetFilePath = $tempDirectory.$_SESSION['nama_foto_KTP'];
+                move_uploaded_file($tempFilePath, $targetFilePath);
                 $otp = rand(100000,999999);
                 sendOTP($_POST["email"],$otp);
                 $query = "INSERT INTO otp_expiry(otp,is_expired,create_at,email) VALUES ('" . $otp . "', 0, '" . date("Y-m-d H:i:s"). "', '" . $email . "')";
@@ -68,15 +78,13 @@
         $NIK = $_SESSION['data']['NIK'] ;
         $pass = $_SESSION['data']['password'] ;
 
-        $fotoKTP = $_SESSION['data']['fotoKTP'] ;
-        $fotoKTP_size= $_SESSION['data']['fotoKTP_size'] ;
-        $fotoKTP_tmpname= $_SESSION['data']['fotoKTP_tmpname'] ;
-        $fotoKTP_folder= $_SESSION['data']['fotoKTP_folder'] ;
+        
+       
 
-        $fotoWajah = $_SESSION['data']['fotoWajah'] ;
-        $fotoWajah_size= $_SESSION['data']['fotoWajah_size'] ;
-        $fotoWajah_tmpname= $_SESSION['data']['fotoWajah_tmpname'] ;
-        $fotoWajah_folder= $_SESSION['data']['fotoWajah_folder'] ;
+        $fotoWajah = $_SESSION['fotoWajah'] ;
+        $fotoWajah_size= $_SESSION['fotoWajah_size'] ;
+        $fotoWajah_tmpname= $_SESSION['fotoWajah_tmpname'] ;
+        $fotoWajah_folder= '../img/user/'.$fotoWajah ;
 
         $query = "SELECT * FROM otp_expiry WHERE otp='" . $_POST["otp"] . "'AND email ='".$email."' AND is_expired!=1 AND NOW() <= DATE_ADD(create_at, INTERVAL 24 HOUR)";
         $get = $connect->prepare($query);
@@ -90,9 +98,15 @@
             $update = $connect->prepare($query);
             $update -> execute();
 
+            $fileName = $_SESSION['nama_foto_KTP']; 
+            $filePath = $tempDirectory . $fileName;
+            $permanentDirectory = '../img/user/';
+            $targetFilePath = $filePath; 
+            $destinationFilePath = $permanentDirectory . $fileName;
+
             move_uploaded_file($fotoWajah_tmpname, $fotoWajah_folder);
-            move_uploaded_file($fotoKTP_tmpname, $fotoKTP_folder);
-            $insert_user =$connect->prepare("insert into  users (nama,nomor,email,NIK,password,foto_KTP, foto_wajah, status) values ('$nama','$nomor','$email','$NIK','$pass','$fotoKTP','$fotoWajah','pending')");
+            rename($targetFilePath, $destinationFilePath);
+            $insert_user =$connect->prepare("insert into  users (nama,nomor,email,NIK,password,foto_KTP, foto_wajah, status) values ('$nama','$nomor','$email','$NIK','$pass','$_SESSION[nama_foto_KTP]','$fotoWajah','pending')");
             $insert_user->execute();
             $_SESSION['success'] = 2;
             $_SESSION['r_status']=2;
@@ -105,6 +119,19 @@
             $_SESSION['r_status'] = 2;
             header("location:OTP.php");
         }	
+
+        if (file_exists($tempDirectory)) {
+            // Delete all files inside the directory
+            $files = glob($tempDirectory . '*');
+            foreach ($files as $file) {
+                if (is_file($file)) {
+                    unlink($file);
+                }
+            }
+            
+            // Delete the temporary directory itself
+            rmdir($tempDirectory);
+        }
     }
 
         // Add this code to check if the message container should be displayed or not
