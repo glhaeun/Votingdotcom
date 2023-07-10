@@ -26,7 +26,7 @@
 <?php include '../admin_component/php/login_verifikasi.php' ?>
 
     <div class="section1">
-    <img class="backgroundSection1" src="../img/landing/background1.png">
+    <img class="backgroundSection1" src="../img/web/background.png">
     <div class="container">
     <?php flash('Logout'); ?>
         <h1>Login</h1>

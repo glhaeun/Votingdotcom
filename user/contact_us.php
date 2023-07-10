@@ -1,3 +1,4 @@
+<?php include "../component/php/connect.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
