@@ -48,7 +48,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4" style="display: grid;">
-            <h1 class="h3 mb-0 text-gray-800">Category List</h1>
+            <h1 class="h3 mb-0 text-gray-800">Daftar Kategori</h1>
         </div>
 
         <!-- Content Row -->
@@ -56,7 +56,7 @@
         <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">
-                                <a href="add_category.php"><input type="button" value="Add Category" class="btn btn-primary"></a>
+                                <a href="add_category.php"><input type="button" value="Tambah Kategori" class="btn btn-primary"></a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -65,10 +65,10 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Nama Vote</th>
+                                            <th>Nama Kategori</th>
                                             <th>Keterangan</th>
-                                            <th>Tggl Mulai</th>
-                                            <th>Tggl Selesai</th>
+                                            <th>Tanggal Mulai</th>
+                                            <th>Tanggal Berakhir</th>
                                             <th># Kandidat</th>
                                             <th>Status</th>
                                             <th>Aksi</th>

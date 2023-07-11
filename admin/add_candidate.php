@@ -56,7 +56,7 @@
         <div class="row justify-content-center">
         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Add Candidate</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ">Tambah Kandidat</h1>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data">
@@ -90,7 +90,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                <label for="votingtipe">Ikut Voting:</label>
+                                <label for="votingtipe">Ikut pemilihan:</label>
                                 <select id="votingtipe" class="form-control" name="votingtipe">
                                     <option selected></option>
                                     <?php 
@@ -120,7 +120,7 @@
                                 </div>
                                 
                             </div>
-                            <input type="submit" class="btn btn-primary" value="Add" name="submit">
+                            <input type="submit" class="btn btn-primary" value="Tambah" name="submit">
                             </form>
                         </div>
                     </div>

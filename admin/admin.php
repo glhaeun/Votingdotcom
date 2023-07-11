@@ -45,15 +45,15 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-start mb-4" style="display: grid;">
-            <h1 class="h3 mb-0 text-gray-800">Admin Profile</h1>
+            <h1 class="h3 mb-0 text-gray-800">Profil Admin</h1>
             <h6 class="m-0 ml-2 font-weight-bold text-primary">
-            <button onclick="hideShow_update()" class="btn btn-primary">Update Profile</button>
+            <button onclick="hideShow_update()" class="btn btn-primary">Perbarui Profil</button>
             </h6>
             <?php 
             if($_SESSION['admin_level']=='master_admin'){
                 ?>
             <h6 class="m-0 ml-2 font-weight-bold text-primary">
-            <button onclick="hideShow_add()" class="btn btn-primary">Add new admin</button>
+            <button onclick="hideShow_add()" class="btn btn-primary">Tambah Admin</button>
             </h6>
                 <?php
             }
@@ -65,7 +65,7 @@
         <div class="row justify-content-center">
         <div class="card shadow mb-4" id="update-admin" style="display:none;">
                         <div class="card-header py-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Update Admin</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ">Perbarui Admin</h1>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data">
@@ -81,23 +81,23 @@
                             </div>
                             <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="admin_currentpassword">Current Password Admin</label>
+                                <label for="admin_currentpassword">Kata Kunci Admin Sebelumnya</label>
                                 <input   name="admin_currentpassword" type="password" class="form-control" id="admin_currentpassword" placeholder="" >
                                 </div>
                             </div>
                             <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="admin_password">Password Admin</label>
+                                <label for="admin_password">Kata Kunci Admin yang Baru</label>
                                 <input   name="admin_password" type="password" class="form-control" id="admin_password" placeholder="" >
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="admin_cpassword">Reconfirm Password</label>
+                                <label for="admin_cpassword">Konfirmasi Kata Kunci Baru</label>
                                 <input   name="admin_cpassword" type="password" class="form-control" id="admin_cpassword" placeholder="" >
                                 </div>
                             </div>
                             
-                            <input type="submit" class="btn btn-primary" value="Update" name="update-admin">
-                            <input onclick="hideShow_update()" type="button" class="btn btn-primary" value="Cancel" name="cancel">
+                            <input type="submit" class="btn btn-primary" value="Ubah" name="update-admin">
+                            <input onclick="hideShow_update()" type="button" class="btn btn-primary" value="Batal" name="cancel">
 
                             </form>
                         </div>
@@ -107,7 +107,7 @@
                 ?>
         <div class="card shadow mb-4" id="add-admin" style="display:none;">
                         <div class="card-header py-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Add Admin</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ">Tambah Admin</h1>
                         </div>
                         <div class="card-body">
                         <form action="" method="post" enctype="multipart/form-data">
@@ -123,17 +123,17 @@
                             </div>
                             <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="admin_password">Password Admin</label>
+                                <label for="admin_password">Kata Kunci Admin</label>
                                 <input   name="admin_password" type="password" class="form-control" id="admin_password" placeholder="" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="admin_cpassword">Reconfirm Password</label>
+                                <label for="admin_cpassword">Konfirmasi Kata Kunci</label>
                                 <input   name="admin_cpassword" type="password" class="form-control" id="admin_cpassword" placeholder="" required>
                                 </div>
                             </div>
                             
-                            <input type="submit" class="btn btn-primary" value="Add" name="add-admin">
-                            <input type="button" class="btn btn-primary" value="Cancel" name="cancel" onclick="hideShow_add()">
+                            <input type="submit" class="btn btn-primary" value="Tambah" name="add-admin">
+                            <input type="button" class="btn btn-primary" value="Batal" name="cancel" onclick="hideShow_add()">
 
                             </form>
                         </div>
@@ -182,7 +182,7 @@
                             <td><a href="admin.php?delete=<?=$fetch_admin['admin_id']?>" class="" onclick="return confirm('Are you sure to delete this admin?');"><i class="fa-solid fa-trash"></i></a></td>
                         <?php
                     } else {
-                        ?><td>NORMAL ADMIN</td>
+                        ?><td>ADMIN NORMAL</td>
                         <?php
                         }
                     }?> </tr>       

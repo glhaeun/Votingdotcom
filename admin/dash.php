@@ -51,7 +51,7 @@
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
         </div>
         <div class="d-sm-flex align-items-center justify-content-center mb-4" style="display: grid;">
-            <h1 class="h5 mb-0 text-gray-800">Hello, <?=$_SESSION['nama_admin']?>! <i class="fas fa-smile-wink"></i></h1>
+            <h1 class="h5 mb-0 text-gray-800">Halo, <?=$_SESSION['nama_admin']?>! <i class="fas fa-smile-wink"></i></h1>
         </div>
 
         <!-- Content Row -->
@@ -67,7 +67,7 @@
                                     $get = $connect -> prepare($query);
                                     $get -> execute();
                                     ?>
-                                    Total Categories</div>
+                                    Total Kategori</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$get->rowCount()?></div>
                             </div>
                             <div class="col-auto">
@@ -85,7 +85,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Total Candidates</div>
+                                    Total Kandidat</div>
                                     <?php
                                     $query = "SELECT * FROM candidate";
                                     $get = $connect -> prepare($query);
@@ -107,7 +107,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Users
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Pengguna
                                 </div>
                                 <?php
                                     $query = "SELECT * FROM users";

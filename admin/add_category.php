@@ -55,36 +55,36 @@ $counter=1;
 
         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Add Category</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ">Tambah Kategori</h1>
                         </div>
                         <div class="card-body">
                         <form action="" method="post">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                <label for="votetitle">Voting Title:</label>
+                                <label for="votetitle">Judul Pemungutan Suara:</label>
                                 <input type="text" class="form-control" name="votetitle" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                 <label for="status">Status</label>
                                 <select id="inputStatus" class="form-control" name="status" required>
-                                    <option selected>Active</option>
-                                    <option disabled>Inactive</option>
+                                    <option selected>Aktif</option>
+                                    <option disabled>Tidak Aktif</option>
                                     <option disabled>Tutup</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                <label for="starttggl">Starts:</label>
+                                <label for="starttggl">Mulai:</label>
                                 <input type="date" class="form-control" name="start_tggl" required >
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="endtggl">Ends:</label>
+                                <label for="endtggl">Berakhir:</label>
                                 <input type="date" class="form-control" name="end_tggl" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="detail">Details</label>
+                                <label for="detail">Detail</label>
                                 <input   name="detail" type="text" class="form-control" id="detail" placeholder="" required>
                             </div>
                             <div class="form-group">
@@ -92,8 +92,8 @@ $counter=1;
                                 <input   name="jabatan" type="text" class="form-control" id="detail" placeholder="" required>
                             </div>
                             <div class="form-group">
-                                <label for="candidate">Candidate</label> 
-                                <button type="button" class="btn btn-success btn-sm" onclick="addEntry();"><span class="glyphicon glyphicon-plus">Add Candidate</span></button>
+                                <label for="candidate">Kandidat</label> 
+                                <button type="button" class="btn btn-success btn-sm" onclick="addEntry();"><span class="glyphicon glyphicon-plus">Tambah Kandidat</span></button>
 				                <div id="candidate">
                 
                                     <div class="form-group">
@@ -118,7 +118,7 @@ $counter=1;
                                     </select> -->
                                     </div>
                             </div>
-                            <input type="submit" class="btn btn-primary" value="Add" name="submit_category">
+                            <input type="submit" class="btn btn-primary" value="Tambah" name="submit_category">
                             </form>
                         </div>
                     </div>

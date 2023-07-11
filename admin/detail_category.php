@@ -59,7 +59,7 @@ $jumlah_calon = $row['jml_calon'];
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4" style="display: grid;">
-            <h1 class="h3 mb-0 text-gray-800">Category List</h1>
+            <h1 class="h3 mb-0 text-gray-800">Daftar Kategori</h1>
         </div>
 
 
@@ -76,7 +76,7 @@ $jumlah_calon = $row['jml_calon'];
               <tr>
                 <th>Calon</th>
                 <th class="text-center">Partai</th>
-                <th class=" text-right">Action</th>
+                <th class=" text-right">Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -140,7 +140,7 @@ $jumlah_calon = $row['jml_calon'];
                     <?php
                 }} else {
                     ?>
-                    <p>Sedang Inactive</p>
+                    <p>Sedang Tidak Aktif</p>
                     <?php
                 }?>
               
@@ -148,13 +148,13 @@ $jumlah_calon = $row['jml_calon'];
           </table>
           <div class="text-center mt-3 mt-sm-3">
             <ul class="pagination justify-content-center mb-0">
-              <li class="page-item disabled"> <span class="page-link">Prev</span> </li>
+              <li class="page-item disabled"> <span class="page-link">Sebelumnya</span> </li>
               <li class="page-item active" aria-current="page"><span class="page-link">1 </span> <span class="sr-only">(current)</span></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li>
               <li class="page-item"><a class="page-link" href="#">...</a></li>
               <li class="page-item"><a class="page-link" href="#">25</a></li>
-              <li class="page-item"> <a class="page-link" href="#">Next</a> </li>
+              <li class="page-item"> <a class="page-link" href="#">Selanjutnya</a> </li>
             </ul>
           </div>
         </div>

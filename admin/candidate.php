@@ -51,7 +51,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4" style="display: grid;">
-            <h1 class="h3 mb-0 text-gray-800">Candidate List</h1>
+            <h1 class="h3 mb-0 text-gray-800">Daftar Kandidat</h1>
         </div>
         <!-- Content Row -->
         
@@ -59,7 +59,7 @@
         <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">
-                                <a href="add_candidate.php"><input type="button" value="Add Candidate" class="btn btn-primary"></a>
+                                <a href="add_candidate.php"><input type="button" value="Tambah Kandidat" class="btn btn-primary"></a>
                             </h6>
                         </div>
                         <div class="card-body">
@@ -74,7 +74,7 @@
                                             <th>Nama Wakil</th>
                                             <th>Visi</th>
                                             <th>Misi</th>
-                                            <th>Voting Name</th>
+                                            <th>Nama Kategori</th>
                                             <th>Partai</th>
                                             <th>Aksi</th>
                                         </tr>
