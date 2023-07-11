@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dashboard</title>
+    <title>Update Kategori</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -63,13 +63,13 @@
         <div class="row category-row justify-content-center">
         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Edit Category</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ">Mengubah Data Kategori</h1>
                         </div>
                         <div class="card-body">
                         <form action="" method="post">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                <label for="votetitle">Voting Title:</label>
+                                <label for="votetitle">Nama Kategori:</label>
                                 <input type="text" class="form-control" name="votetitle" value="<?=$fetch_category['nama']?>" >
                                 </div>
                                 <div class="form-group col-md-6">
@@ -83,16 +83,16 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                <label for="starttggl">Starts:</label>
+                                <label for="starttggl">Mulai:</label>
                                 <input type="date" class="form-control" name="start_tggl" value="<?= $fetch_category['start_tggl']?>"  >
                                 </div>
                                 <div class="form-group col-md-6">
-                                <label for="endtggl">Ends:</label>
+                                <label for="endtggl">Akhir:</label>
                                 <input type="date" class="form-control" name="end_tggl" value="<?= $fetch_category['end_tggl']?>"  >
                                 </div>  
                             </div>
                             <div class="form-group">
-                                <label for="detail">Details</label>
+                                <label for="detail">Detail</label>
                                 <input   name="detail" type="text" class="form-control" id="detail" value="<?=$fetch_category['details']?>" >
                             </div>
                             <div class="form-group">
@@ -100,8 +100,8 @@
                                 <input   name="nama_jabatan" type="text" class="form-control" id="nama_jabatan" value="<?=$fetch_category['nama_jabatan']?>" >
                             </div>
                             
-                            <input type="submit" class="btn btn-primary" value="Update" name="update_category">
-                            <input type="submit" class="btn btn-secondary" value="Cancel" name="cancel_category">
+                            <input type="submit" class="btn btn-primary" value="Ubah" name="update_category">
+                            <input type="submit" class="btn btn-secondary" value="Batal" name="cancel_category">
 
                             </form>
                         </div>

@@ -8,7 +8,7 @@
             <div class="col-md-3">
                 <h4>Tautan</h4>
                 <ul>
-                    <li><a href="landing.php">Halaman Utama</a></li>
+                    <li><a href="landing.php">Beranda</a></li>
                     <li><a href="prediction.php">Prediksi</a></li>
                     <li><a href="tutorial.php">Tutorial</a></li>
                     <li><a href="contact_us.php">Hubungi Kami</a></li>

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dashboard</title>
+    <title>Data User</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -99,14 +99,14 @@ $fetch_user = $show_user->fetch(PDO::FETCH_ASSOC);
                             <?php
                                 if($fetch_user['status'] == "verified"){
                                     ?>
-                            <input type="submit" class="btn btn-danger" value="Delete" name="delete" onclick="return confirm('Are you sure to delete this user?');">
-                            <input type="submit" class="btn btn-secondary" value="Cancel" name="cancel">
+                            <input type="submit" class="btn btn-danger" value="Hapus" name="delete" onclick="return confirm('Are you sure to delete this user?');">
+                            <input type="submit" class="btn btn-secondary" value="Batal" name="cancel">
                                     <?php
                                 } else {
                                     ?>
-                            <input type="submit" class="btn btn-primary" value="Verify" name="verify">
-                            <input type="submit" class="btn btn-danger" value="Reject" name="reject">
-                            <input type="submit" class="btn btn-secondary" value="Cancel" name="cancel">
+                            <input type="submit" class="btn btn-primary" value="Terima" name="verify">
+                            <input type="submit" class="btn btn-danger" value="Tolak" name="reject">
+                            <input type="submit" class="btn btn-secondary" value="Batal" name="cancel">
 
                                     <?php
                                 }

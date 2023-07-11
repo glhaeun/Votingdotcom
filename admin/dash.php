@@ -48,7 +48,7 @@
     <?php flash('Success');?>   
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4" style="display: grid;">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Dasbor</h1>
         </div>
         <div class="d-sm-flex align-items-center justify-content-center mb-4" style="display: grid;">
             <h1 class="h5 mb-0 text-gray-800">Halo, <?=$_SESSION['nama_admin']?>! <i class="fas fa-smile-wink"></i></h1>

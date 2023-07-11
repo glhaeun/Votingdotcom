@@ -53,7 +53,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="dash.php">
             <i class="fas fa-columns"></i>
-            <span>Dashboard</span></a>
+            <span>Dasbor</span></a>
         </li>
 
         <!--  -->
@@ -69,7 +69,7 @@
                     <a class="nav-link collapsed" href="../admin/admin.php"
                         aria-expanded="true" >
                         <i class="fas fa-fw fa-cog"></i>
-                        <span>Admin Profile</span>
+                        <span>Profil Admin</span>
                     </a>
                 </li>
         <!-- <?php 
@@ -94,7 +94,7 @@
         <li class="nav-item">
             <a class="nav-link" href="../admin/user.php">
             <i class="fas fa-user"></i>
-            <span>User List</span></a>
+            <span>Daftar Pengguna</span></a>
         </li>
 
         <!-- Divider -->
@@ -109,7 +109,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="../admin/prevoting.php" >
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Prevoting Results</span>
+                <span>Hasil Prediksi</span>
             </a>
         </li>
 
@@ -117,20 +117,20 @@
         <li class="nav-item">
             <a class="nav-link" href="voting.php">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>Voting Results</span></a>
+                <span>Hasil Pemilihan</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
             <a class="nav-link" href="category.php">
                 <i class="fas fa-list"></i>
-                <span>Category List</span></a>
+                <span>Daftar Kategori</span></a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="candidate.php">
                 <i class="fas fa-users"></i>
-                <span>Candidate List</span></a>
+                <span>Daftar Kandidat</span></a>
         </li>
 
         <!-- Divider -->
