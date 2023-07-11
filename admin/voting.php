@@ -25,7 +25,7 @@
 
 <?php include '../admin_component/php/connect.php';?>
 <?php include '../admin_component/php/flash_alert.php' ?>
-<?php include '../admin_component/php/logout.php';
+<?php 
 include '../admin_component/php/sendemail.php';
 
 

@@ -23,7 +23,7 @@
 </head>
 <?php include '../admin_component/php/connect.php';?>
 <?php include '../admin_component/php/flash_alert.php' ?>
-<?php include '../admin_component/php/logout.php';
+<?php 
 include '../admin_component/php/sendemail.php';
 if(isset($_GET['type_of_users'])) {
     $status = $_GET['type_of_users'];
