@@ -1,14 +1,13 @@
+<?php include "../component/php/connect.php"; ?>
 <!DOCTYPE html>
 <html>
-<?php
-    include "../component/php/connect.php"; 
-    require_once("../component/php/navbar.php"); ?>
+<head>
 <?php require_once("../component/php/head.php"); ?>
-
 <link rel="stylesheet" href="../component/style/styleTutorial.css">
-
+</head>
 <body>
-  <div id="tutorial" class="container">
+  <?php  require_once("../component/php/navbar.php"); ?>
+  <div id="tutorial" class="container" style="padding: 40px 0px">
     <h1>Bagaimana cara menggunakannya?</h1>
     
     <div class="steps-container">

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dashboard</title>
+    <title>Update Kandidat</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -68,7 +68,7 @@ $fetch_candidate = $show_candidate->fetch(PDO::FETCH_ASSOC);
             
         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <h1 class="h3 mb-0 text-gray-800 ">Update Candidate</h1>
+                        <h1 class="h3 mb-0 text-gray-800 ">Mengubah Data Kandidat</h1>
                         </div>
 
                         <div class="card-body">
@@ -136,8 +136,8 @@ $fetch_candidate = $show_candidate->fetch(PDO::FETCH_ASSOC);
                                 </select>
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-primary" value="Update" name="submit_candidate">
-                            <input type="submit" class="btn btn-secondary" value="Cancel" name="cancel_candidate">
+                            <input type="submit" class="btn btn-primary" value="Ubah" name="submit_candidate">
+                            <input type="submit" class="btn btn-secondary" value="Batal" name="cancel_candidate">
                             </form>
                         </div>
                     </div>

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dashboard</title>
+    <title>Voting Result</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -61,7 +61,7 @@ include '../admin_component/php/sendemail.php';
         <div class="category-row">
         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <h5 class="h5 mb-0 text-gray-800">Nama Vote</h5>
+                        <h5 class="h5 mb-0 text-gray-800">Nama Pemilihan</h5>
                             <!-- <h6 class="m-0 font-weight-bold text-primary">
                                 <a href="addcandidate.php"><input type="button" value="Add Candidate"></a>
                             </h6> -->
@@ -136,12 +136,12 @@ include '../admin_component/php/sendemail.php';
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Action:</div>
-                                            <a class="dropdown-item" id="details">Show Details</a>
+                                            <a class="dropdown-item" id="details">Data Perinci</a>
 
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" id="png">Download PNG</a>
-                                            <a class="dropdown-item" id="jpeg">Download JPG</a>
-                                            <a class="dropdown-item" id="pdf">Download PDF</a>
+                                            <a class="dropdown-item" id="png">Menunduh PNG</a>
+                                            <a class="dropdown-item" id="jpeg">Menunduh JPG</a>
+                                            <a class="dropdown-item" id="pdf">Menunduh PDF</a>
 
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@ include '../admin_component/php/sendemail.php';
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Vote Result Table</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Tabel Hasil Pemilihan</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

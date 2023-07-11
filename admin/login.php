@@ -29,7 +29,7 @@
     <img class="backgroundSection1" src="../img/web/background.png">
     <div class="container">
     <?php flash('Logout'); ?>
-        <h1>Login</h1>
+        <h1>MASUK</h1>
         <?php if (isset($errorMessage)): ?>
             <p><?php echo $errorMessage; ?></p>
         <?php endif; ?>
@@ -50,7 +50,7 @@
             </div>
             <div class="form-group">
                 <div class="btn-container">
-                    <button class="btn" type="submit">Log in</button>
+                    <button class="btn" type="submit">Masuk</button>
                 </div>
             </div>
         </form>

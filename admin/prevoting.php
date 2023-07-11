@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dashboard</title>
+    <title>Hasil Prediksi</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,17 +50,17 @@ include '../admin_component/php/naivebayes.php';
     
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4" style="display: grid;">
-            <h1 class="h3 mb-0 text-gray-800">Prevoting Survei Results</h1>
+            <h1 class="h3 mb-0 text-gray-800">Hasil Prediksi dari Survei</h1>
         </div>
 
         <!-- Content Row -->
         <div class="row category-row">
         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <h5 class="h5 mb-0 text-gray-800">Upload Survei CSV File</h5>
+                        <h5 class="h5 mb-0 text-gray-800">Unggah Survei - File CSV</h5>
                         <form action="" method="post" enctype="multipart/form-data" id="import-form">
         <input type="file" class="form-control" id="csvfile" name="csvfile" placeholder="Select CSV file" />
-        <input type="submit" value="Submit" class="btn btn-primary" id="importcsv" name="import">
+        <input type="submit" value="Unduh" class="btn btn-primary" id="importcsv" name="import">
         </div>
         </div>
         <div class="card shadow mb-4">
@@ -95,7 +95,7 @@ include '../admin_component/php/naivebayes.php';
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Survey Prediction</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Prediksi Survei</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

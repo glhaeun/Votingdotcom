@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dashboard</title>
+    <title>Daftar Pengguna</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -53,7 +53,7 @@ if(isset($_GET['type_of_users'])) {
     <?php flash_alert('Message') ?>
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4" style="display: grid;">
-            <h1 class="h3 mb-0 text-gray-800">User List</h1>
+            <h1 class="h3 mb-0 text-gray-800">Daftar Pengguna</h1>
         </div>
 
         <!-- Tabs navs -->
@@ -68,7 +68,7 @@ if(isset($_GET['type_of_users'])) {
             role="tab"
             aria-controls="ex1-tabs-1"
             aria-selected="true"
-            >ALL USERS</a
+            >SEMUA PENGGUNA</a
             >
         </li>
         <li class="nav-item" role="presentation">
@@ -80,7 +80,7 @@ if(isset($_GET['type_of_users'])) {
             role="tab"
             aria-controls="ex1-tabs-2"
             aria-selected="false"
-            >VERIFIED USERS</a
+            >SUDAH VERIFIKASI</a
             >
         </li>
         <li class="nav-item" role="presentation">
@@ -92,7 +92,7 @@ if(isset($_GET['type_of_users'])) {
             role="tab"
             aria-controls="ex1-tabs-3"
             aria-selected="false"
-            >UNVERIFIED USERS</a
+            >BELUM VERIFIKASI</a
             >
         </li>
         </ul>

@@ -24,9 +24,7 @@
         //kt simpan filenya di folder sementara dulu cuz klo gk imgnya hilang
         // yg tersimpan di session nnti cuman string bukan imgnya sendiri --> error td karena ini wkwk
 
-        $_SESSION['fotoWajah']  = $_FILES['fotoWajah']['name'];
-        $_SESSION['fotoWajah_size'] = $_FILES['fotoWajah']['size'];
-        $_SESSION['fotoWajah_tmpname'] = $_FILES['fotoWajah']['tmp_name'];
+        
 
         $select_users = $connect->prepare("SELECT * FROM users WHERE email = ? ");
         $select_users -> execute([$email]);
@@ -56,7 +54,15 @@
                 $tempFilePath = $_FILES['fotoKTP']['tmp_name'];
                 $_SESSION['nama_foto_KTP'] = $NIK."_fotoKTP_".$_FILES['fotoKTP']['name'];
                 $targetFilePath = $tempDirectory.$_SESSION['nama_foto_KTP'];
+
+                $tempFilePath_fotoWajah = $_FILES['fotoWajah']['size'];
+                $_SESSION['nama_foto_Wajah'] = $NIK."_fotoWajah_".$_FILES['fotoWajah']['name'];
+                $targetFilePath_fotoWajah = $tempDirectory.$_SESSION['nama_foto_Wajah'];
+
+
                 move_uploaded_file($tempFilePath, $targetFilePath);
+                move_uploaded_file($tempFilePath_fotoWajah, $targetFilePath_fotoWajah);
+
                 $otp = rand(100000,999999);
                 sendOTP($_POST["email"],$otp);
                 $query = "INSERT INTO otp_expiry(otp,is_expired,create_at,email) VALUES ('" . $otp . "', 0, '" . date("Y-m-d H:i:s"). "', '" . $email . "')";
@@ -78,14 +84,6 @@
         $NIK = $_SESSION['data']['NIK'] ;
         $pass = $_SESSION['data']['password'] ;
 
-        
-       
-
-        $fotoWajah = $_SESSION['fotoWajah'] ;
-        $fotoWajah_size= $_SESSION['fotoWajah_size'] ;
-        $fotoWajah_tmpname= $_SESSION['fotoWajah_tmpname'] ;
-        $fotoWajah_folder= '../img/user/'.$fotoWajah ;
-
         $query = "SELECT * FROM otp_expiry WHERE otp='" . $_POST["otp"] . "'AND email ='".$email."' AND is_expired!=1 AND NOW() <= DATE_ADD(create_at, INTERVAL 24 HOUR)";
         $get = $connect->prepare($query);
         $get -> execute();
@@ -104,8 +102,15 @@
             $targetFilePath = $filePath; 
             $destinationFilePath = $permanentDirectory . $fileName;
 
-            move_uploaded_file($fotoWajah_tmpname, $fotoWajah_folder);
+            $fileName_fotoWajah = $_SESSION['nama_foto_Wajah']; 
+            $filePath = $tempDirectory . $fileName;
+            $permanentDirectory = '../img/user/';
+            $targetFilePath_fotoWajah = $filePath; 
+            $destinationFilePath_fotoWajah = $permanentDirectory . $fileName;
+
             rename($targetFilePath, $destinationFilePath);
+            rename($targetFilePath_fotoWajah, $destinationFilePath_fotoWajah);
+
             $insert_user =$connect->prepare("insert into  users (nama,nomor,email,NIK,password,foto_KTP, foto_wajah, status) values ('$nama','$nomor','$email','$NIK','$pass','$_SESSION[nama_foto_KTP]','$fotoWajah','pending')");
             $insert_user->execute();
             $_SESSION['success'] = 2;

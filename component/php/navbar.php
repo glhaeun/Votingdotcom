@@ -64,7 +64,7 @@
                     ?>
                     </div>
                     <div class="nav-menu">
-                        <a href="landing.php" style="text-decoration: none;"><div class="nav-item">HALAMAN UTAMA</div></a>
+                        <a href="landing.php" style="text-decoration: none;"><div class="nav-item">BERANDA</div></a>
                     </div>
                     <div class="nav-menu">
                         <a href="prediction.php" style="text-decoration: none;"><div class="nav-item">PREDIKSI</div></a>
