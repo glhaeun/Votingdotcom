@@ -5,4 +5,5 @@
     $connect = new PDO($db_name, $username, $password);
 
     session_start();
+    
 ?>

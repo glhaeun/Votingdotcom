@@ -55,7 +55,7 @@
                 $_SESSION['nama_foto_KTP'] = $NIK."_fotoKTP_".$_FILES['fotoKTP']['name'];
                 $targetFilePath = $tempDirectory.$_SESSION['nama_foto_KTP'];
 
-                $tempFilePath_fotoWajah = $_FILES['fotoWajah']['size'];
+                $tempFilePath_fotoWajah = $_FILES['fotoWajah']['tmp_name'];
                 $_SESSION['nama_foto_Wajah'] = $NIK."_fotoWajah_".$_FILES['fotoWajah']['name'];
                 $targetFilePath_fotoWajah = $tempDirectory.$_SESSION['nama_foto_Wajah'];
 
