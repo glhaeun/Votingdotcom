@@ -96,22 +96,22 @@
             $update = $connect->prepare($query);
             $update -> execute();
 
+            $permanentDirectory = '../img/user/';
+
             $fileName = $_SESSION['nama_foto_KTP']; 
             $filePath = $tempDirectory . $fileName;
-            $permanentDirectory = '../img/user/';
             $targetFilePath = $filePath; 
             $destinationFilePath = $permanentDirectory . $fileName;
 
             $fileName_fotoWajah = $_SESSION['nama_foto_Wajah']; 
-            $filePath = $tempDirectory . $fileName;
-            $permanentDirectory = '../img/user/';
-            $targetFilePath_fotoWajah = $filePath; 
-            $destinationFilePath_fotoWajah = $permanentDirectory . $fileName;
+            $filePath_fotoWajah = $tempDirectory . $fileName;
+            $targetFilePath_fotoWajah = $filePath_fotoWajah; 
+            $destinationFilePath_fotoWajah = $permanentDirectory . $fileName_fotoWajah;
 
             rename($targetFilePath, $destinationFilePath);
             rename($targetFilePath_fotoWajah, $destinationFilePath_fotoWajah);
 
-            $insert_user =$connect->prepare("insert into  users (nama,nomor,email,NIK,password,foto_KTP, foto_wajah, status) values ('$nama','$nomor','$email','$NIK','$pass','$_SESSION[nama_foto_KTP]','$fotoWajah','pending')");
+            $insert_user =$connect->prepare("insert into  users (nama,nomor,email,NIK,password,foto_KTP, foto_wajah, status) values ('$nama','$nomor','$email','$NIK','$pass','$_SESSION[nama_foto_KTP]','$_SESSION[nama_foto_Wajah]','pending')");
             $insert_user->execute();
             $_SESSION['success'] = 2;
             $_SESSION['r_status']=2;
@@ -133,7 +133,6 @@
                     unlink($file);
                 }
             }
-            
             // Delete the temporary directory itself
             rmdir($tempDirectory);
         }
