@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dashboard</title>
+    <title>Voting.com</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -140,7 +140,7 @@
                                     $get -> execute();
                                     ?>
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Number of Votes</div>
+                                Jumlah Suara</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$get->rowCount()?></div>
                             </div>
                             <div class="col-auto">
