@@ -25,7 +25,6 @@
 <?php include '../admin_component/php/connect.php';?>
 <?php include '../admin_component/php/check.php';?>
 <?php include '../admin_component/php/flash_alert.php' ?>
-<?php include '../admin_component/php/logout.php' ?>
 
 
 <body id="page-top">
