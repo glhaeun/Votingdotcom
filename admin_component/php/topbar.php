@@ -19,7 +19,7 @@
             <a class="nav-link dropdown-toggle" href="dash.php?logout=<?=$_SESSION['admin_id']?>" id="userDropdown" role="button" style="gap: 10px;">
                     <span style="cursor: context-menu;" class="mr-2 d-none d-lg-inline text-gray-600 small">Hi <?=$_SESSION['nama_admin']?></span>
                     <i class="fas fa-sign-out-alt text-gray-600" ></i>
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Keluar</span>
                 
                 </a>
             </li>

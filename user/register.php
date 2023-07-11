@@ -58,7 +58,7 @@
                 $tempFilePath_fotoWajah = $_FILES['fotoWajah']['tmp_name'];
                 $_SESSION['nama_foto_Wajah'] = $NIK."_fotoWajah_".$_FILES['fotoWajah']['name'];
                 $targetFilePath_fotoWajah = $tempDirectory.$_SESSION['nama_foto_Wajah'];
-
+ 
 
                 move_uploaded_file($tempFilePath, $targetFilePath);
                 move_uploaded_file($tempFilePath_fotoWajah, $targetFilePath_fotoWajah);
@@ -104,7 +104,7 @@
             $destinationFilePath = $permanentDirectory . $fileName;
 
             $fileName_fotoWajah = $_SESSION['nama_foto_Wajah']; 
-            $filePath_fotoWajah = $tempDirectory . $fileName;
+            $filePath_fotoWajah = $tempDirectory . $fileName_fotoWajah;
             $targetFilePath_fotoWajah = $filePath_fotoWajah; 
             $destinationFilePath_fotoWajah = $permanentDirectory . $fileName_fotoWajah;
 
