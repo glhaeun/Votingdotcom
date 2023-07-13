@@ -24,7 +24,7 @@ h2 {
 }
 
 @font-face {
-  font-family: "Jarvish Blurry";
+  font-family: "Jarvish";
   src: url("Jarvish.otf") format("opentype");
 }
 
@@ -66,7 +66,7 @@ h2 {
 
 .tittleSection1 {
   position: relative;
-  font-family: "Jarvish Blurry";
+  font-family: "Jarvish";
   color: #bb0c0c;
   font-size: 72px;
   line-height: 72px;
@@ -76,7 +76,7 @@ h2 {
 
 .tittle2Section1 {
   position: relative;
-  font-family: "Jarvish Blurry";
+  font-family: "Jarvish";
   color: white;
   font-size: 40px;
   margin-left: -32px;
