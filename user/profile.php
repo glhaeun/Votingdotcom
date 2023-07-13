@@ -223,6 +223,7 @@ h3 {
 <body>
 <?php require("../component/php/navbar.php"); 
 include '../component/php/profile.php';
+include '../component/php/surat_upload.php';
 ?>
 
     <?php
@@ -258,6 +259,10 @@ include '../component/php/profile.php';
 						<a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
 							<i class="fa fa-key text-center mr-1"></i> 
 							Kata Sandi
+						</a>
+            <a class="nav-link" id="change_name-tab" data-toggle="pill" href="#change_name" role="tab" aria-controls="change_name" aria-selected="false">
+							<i class="fa fa-key text-center mr-1"></i> 
+							Ganti Nama
 						</a>
 					</div>
 				</div>
@@ -331,7 +336,38 @@ include '../component/php/profile.php';
 							<input type="submit" value="Batal" name="cancel_password" class="btn btn-light">
 						</div>
                         </form>
-                    </div>
+            </div>
+            <div class="tab-pane fade" id="change_name" role="tabpanel" aria-labelledby="change_name-tab">
+						<h3 class="mb-4">Perubahan Kata Sandi</h3>
+            <form action="../component/php/download.php" method="POST">
+						<div class="row">
+								<div class="form-group">
+								  	<label>Mengunduh Surat Permohonan Pergantian Nama</label>
+                    <input type="submit" name="download_template" value="Download Template">
+								</div>
+						</div>
+            </form>
+            <form action="" method="POST" enctype="multipart/form-data">
+              <div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label>Nama Baru Anda</label>
+								  	<input type="text" class="form-control" name="nama_baru">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+                <label>Surat Permohonan Anda</label>
+                <input type="file" name="docx_file" accept=".pdf">
+                </div>
+							</div>
+						</div>
+						<div>
+							<input id="submit" type="submit" value="Kirim" name="kirim_surat" class="btn btn-primary">
+							<input type="submit" value="Batal" name="cancel_nama" class="btn btn-light">
+						</div>
+            </form>
+            </div>
 				</div>
 			</div>
 		</div>
