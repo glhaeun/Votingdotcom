@@ -29,8 +29,8 @@
         <img class="backgroundSection1" src="../img/web/background.png">
         <div class="container1">
             <div class="subContainer1">
-                <p class="tittleSection1">Pilih untuk<br>Indonesia yang lebih baik</p>
-                <p class="tittle2Section1">#JanganGolput</p>
+                <p class="tittleSection1">Vote For a<br>Better Indonesia</p>
+                <p class="tittle2Section1">#noGolput</p>
             </div>
             <p class="text-center fs-1 subTittleSection1">Selamat datang di website kami!</p>
             <div style="max-width: 500px; margin: 0 auto;">
