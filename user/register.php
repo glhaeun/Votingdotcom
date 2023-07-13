@@ -199,30 +199,30 @@
             <h2>DAFTAR</h2>
 
             <div class="input-box">
-                <label for="NIK">NIK</label>
+                <label for="NIK">NIK<span style="color: #BB0C0C;">*</span></label>
                 <input type="text" name="NIK" id="NIK" class="box" placeholder="Masukkan NIK" required><br>
                 <span class="error" id="err_NIK"></span>
             </div>
 
             <div class="input-box">
-                <label for="nama">Nama</label>
+                <label for="nama">Nama<span style="color: #BB0C0C;">*</span></label>
                 <input type="text" name="nama" id="nama" class="box" placeholder="Masukkan Nama" required><br>
                 <span class="error" id="err_nama"></span>
             </div>
 
             <div class="input-box">
-                <label for="nomor">Nomor Telepon</label>
+                <label for="nomor">Nomor Telepon<span style="color: #BB0C0C;">*</span></label>
                 <input type="text" name="nomor" id="nomor" class="box" placeholder="Masukkan Nomor Telepon" required><br>
                 <span class="error" id="err_nomor"></span>
             </div>
 
             <div class="input-box">
-                <label for="email">Email</label>
+                <label for="email">Email<span style="color: #BB0C0C;">*</span></label>
                 <input type="text" name="email" id="email" class="box" placeholder="Masukkan Email" required><br>
                 <span class="error" id="err_email"></span>
             </div>
 
-            <label class="input-box" for="password" style="margin-bottom: 0;">Kata Kunci</label>
+            <label class="input-box" for="password" style="margin-bottom: 0;">Kata Kunci<span style="color: #BB0C0C;">*</span></label>
             <div>
                 <div class="side">
                     <div class="input-box">
@@ -239,7 +239,7 @@
                 <span class="error" id="err_password"></span>
             </div>
 
-            <label class="input-box" for="password" style="margin-bottom: 0;">Konfirmasi Kata Kunci</label>
+            <label class="input-box" for="password" style="margin-bottom: 0;">Konfirmasi Kata Kunci<span style="color: #BB0C0C;">*</span></label>
             <div>
                 <div class="side">
                     <div class="input-box">
@@ -257,13 +257,13 @@
             </div>
 
             <div class="input-box">
-                <label for="fotoKTP">Foto KTP</label>
+                <label for="fotoKTP">Foto KTP<span style="color: #BB0C0C;">*</span></label>
                 <input type="file" name="fotoKTP" id="fotoKTP" class="foto" accept="image/jpg image/jpeg, image/png , image/webp" required>
                 <span class="error" id="err_KTP"></span>
             </div>
 
             <div class="input-box">
-                <label for="fotoWajah">Foto Wajah</label>
+                <label for="fotoWajah">Foto Wajah<span style="color: #BB0C0C;">*</span></label>
                 <input type="file" name="fotoWajah" id="fotoWajah" class="foto" accept="image/jpg image/jpeg, image/png , image/webp" required>
                 <span class="error" id="err_wajah"></span>
             </div>

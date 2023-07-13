@@ -249,7 +249,7 @@ include '../component/php/surat_upload.php';
 						<div class="img-circle text-center">
                         <i class="fa fa-user" style="color:#BB0C0C;"></i>
 						</div>
-						<h5 class="text-center">Hai,<?=$user_nama?> </h5>
+						<h5 class="text-center">Hai, <?=$user_nama?> </h5>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
@@ -261,7 +261,7 @@ include '../component/php/surat_upload.php';
 							Kata Sandi
 						</a>
             <a class="nav-link" id="change_name-tab" data-toggle="pill" href="#change_name" role="tab" aria-controls="change_name" aria-selected="false">
-							<i class="fa fa-key text-center mr-1"></i> 
+							<i class="fa fa-solid fa-user-pen"></i> 
 							Ganti Nama
 						</a>
 					</div>
@@ -343,7 +343,7 @@ include '../component/php/surat_upload.php';
 						<div class="row">
 								<div class="form-group">
 								  	<label>Mengunduh Surat Permohonan Pergantian Nama</label>
-                    <input type="submit" name="download_template" value="Download Template">
+                    <input type="submit" name="download_template" class="btn btn-primary" value="Unduh Template">
 								</div>
 						</div>
             </form>
