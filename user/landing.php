@@ -232,7 +232,7 @@
                 </div>
                 
                 <div class="reason-content">
-                <h3 class="fs-2">Gunakan Hak Suara Anda</h3>
+                <h3>Gunakan Hak Suara Anda</h3>
                 <p class="fs-6">Memilih adalah hak fundamental dalam masyarakat demokratis. Ini memungkinkan Anda ikut serta dalam proses pengambilan keputusan dan membentuk masa depan negara Anda.</p>
                 </div>
             </div>
