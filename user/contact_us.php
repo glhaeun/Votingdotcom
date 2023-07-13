@@ -146,9 +146,9 @@
         $mail->SMTPKeepAlive = true; 
         $mail->Username = "evotingindonesia23@gmail.com";
         $mail->Password = "ldaxltxowanuluyu";
-        $mail->SetFrom($email, $name);
+        $mail->SetFrom($email, $name . ' - ' . $email);
         $mail->Subject = "Kritik dan saran dari " . $name;
-        $mail->AddAddress("{$email}","noreply");
+        $mail->AddAddress("evotingindonesia23@gmail.com","noreply");
         $mail->MsgHTML($message);
         $mail->IsHTML(true);	
 
