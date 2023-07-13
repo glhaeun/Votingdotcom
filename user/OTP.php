@@ -122,6 +122,7 @@
                         <?php
 						unset($_SESSION['l_success']);
 						unset($_SESSION['l_status']);
+						unset($_SESSION['from']);
 					} 
 					else if ($_SESSION['l_success'] == 0) {
 						?>
@@ -137,7 +138,9 @@
                             });      
                             </script>   
 							<?php
-							session_destroy();
+							unset($_SESSION['l_success']);
+							unset($_SESSION['l_status']);
+							unset($_SESSION['from']);
 					}
 						?>
 				</form>
