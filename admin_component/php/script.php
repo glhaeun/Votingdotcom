@@ -18,7 +18,7 @@ use PHPMailer\PHPMailer\POP3;
         $delete_candidate = $connect->prepare($query);
         $delete_candidate -> execute([$delete_id]);
 
-        flash_alert('Message', 'Candidate deleted successfully!', FLASH_SUCCESS);
+        flash_alert('Message', 'Kandidat berhasil dihapus!', FLASH_SUCCESS);
 
         // Redirect to the same page or any desired page
         header("Location: candidate.php");
@@ -51,7 +51,7 @@ use PHPMailer\PHPMailer\POP3;
             $delete_candidate = $connect->prepare($query);
             $delete_candidate -> execute([$delete_id]);
     
-        flash_alert('Message', 'Candidate deleted successfully!', FLASH_SUCCESS);
+        flash_alert('Message', 'Kandidat berhasil dihapus!', FLASH_SUCCESS);
 
         // Redirect to the same page or any desired page
         header("Location: candidate.php");
@@ -120,7 +120,7 @@ use PHPMailer\PHPMailer\POP3;
         }
 
     }
-    flash_alert('Message', 'Berhasil mendaftar kandidat!',FLASH_SUCCESS);
+    flash_alert('Message', 'Berhasil mendaftarkan kandidat!',FLASH_SUCCESS);
     header('refresh:2;url=candidate.php');
     }
     }
@@ -391,7 +391,7 @@ if(isset($_POST['submit_category'])) {
         flash_alert('Message', 'Kategori sudah terdaftar!', FLASH_DANGER);
     } else {
         if(strtotime($start) > strtotime($end)){
-            flash_alert('Message','Jadwal tidak tepat! (Start date tidak boleh lambat dari end date)', FLASH_DANGER);
+            flash_alert('Message','Jadwal tidak tepat! (Tanggal mulai tidak boleh lebih dari Tanggal Berakhir)', FLASH_DANGER);
             }
         else {
             $uniqueCandidates = []; // Array to store unique candidate names
@@ -457,7 +457,7 @@ if(isset($_POST['submit_category'])) {
             flash_alert('Message','Kategori sudah terdaftar!',FLASH_DANGER) ;
         } else {
             if(strtotime($start) > strtotime($end)){
-                flash_alert('Message','Jadwal tidak tepat! (Start date tidak boleh lambat dari end date)', FLASH_DANGER);
+                flash_alert('Message','Jadwal tidak tepat! (Tanggal mulai tidak boleh lebih dari Tanggal Berakhir)', FLASH_DANGER);
             } else {
                 // Use prepared statements for all SQL queries to prevent SQL injection
     
@@ -567,7 +567,7 @@ if(isset($_GET['delete_detail'])){
         $check_user -> execute([$username_admin]);
 
         if($check_user->rowCount() > 0) {
-            flash_alert('Message','Gagal mendaftar! Username sudah diambil!', FLASH_DANGER);
+            flash_alert('Message','Gagal mendaftar! Username sudah terdaftar!', FLASH_DANGER);
         } else if ($cpassword_admin != $password_admin){
             flash_alert('Message','Gagal mendaftar!  Salah konfirmasi kata sandi!', FLASH_DANGER);
         }
@@ -575,7 +575,7 @@ if(isset($_GET['delete_detail'])){
             $query = "INSERT INTO admin (nama_admin, username, password) VALUES (?, ?, ?)";
             $insert_user = $connect->prepare($query);
             $insert_user -> execute([$nama_admin, $username_admin, $password_admin]);
-            flash_alert('Message', 'Berhasil mendaftar admin baru!', FLASH_SUCCESS);
+            flash_alert('Message', 'Berhasil mendaftarkan admin baru!', FLASH_SUCCESS);
         }
 
     }
@@ -850,7 +850,7 @@ if(isset($_GET['delete_detail'])){
                 $insert = $connect->prepare($query);
                 $insert->execute();
     
-                flash_alert('Message', 'Data CSV telah berhasil diimport menjadi table '.$tableName.'', FLASH_SUCCESS);
+                flash_alert('Message', 'Data CSV telah berhasil diunggah menjadi tabel '.$tableName.'', FLASH_SUCCESS);
             
     
     

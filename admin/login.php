@@ -39,12 +39,12 @@
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="password">Kata Sandi:</label>
                 <input type="password" id="password" name="password" required>
                 <div class="checkbox-label">
                     <input type="checkbox" id="show-password" onchange="togglePasswordVisibility()">
                     <div class="passw">
-                    <label for="show-password">Show Password</label>
+                    <label for="show-password">Tunjukkan Kata Kunci</label>
                     </div>
                 </div>
             </div>
