@@ -274,14 +274,14 @@ include '../component/php/surat_upload.php';
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Nama</label>
-								  	<input id="nama" name="nama" type="text" class="form-control" value="<?=$user_name?>">
+								  	<input disabled id="nama" name="nama" type="text" class="form-control" value="<?=$user_name?>">
                                     <span class="error" id="err_nama"></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Email</label>
-								  	<input id="email" name="email" type="text" class="form-control" value="<?=$email?>">
+								  	<input disabled id="email" name="email" type="text" class="form-control" value="<?=$email?>">
                     <span class="error" id="err_email"></span>
 								</div>
 							</div>
@@ -295,7 +295,7 @@ include '../component/php/surat_upload.php';
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>NIK</label>
-								  	<input id="NIK" name="NIK" type="text" class="form-control" value="<?=$NIK?>">
+								  	<input disabled id="NIK" name="NIK" type="text" class="form-control" value="<?=$NIK?>">
                                    <span class="error" id="err_NIK"></span>
 								</div>
 							</div>
@@ -335,7 +335,7 @@ include '../component/php/surat_upload.php';
 							<input id="submit" type="submit" value="Ubah" name="update_password" class="btn btn-primary">
 							<input type="submit" value="Batal" name="cancel_password" class="btn btn-light">
 						</div>
-                        </form>
+            </form>
             </div>
             <div class="tab-pane fade" id="change_name" role="tabpanel" aria-labelledby="change_name-tab">
 						<h3 class="mb-4">Perubahan Kata Sandi</h3>
@@ -352,13 +352,13 @@ include '../component/php/surat_upload.php';
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Nama Baru Anda</label>
-								  	<input type="text" class="form-control" name="nama_baru">
+								  	<input type="text" class="form-control" name="nama_baru" required>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
                 <label>Surat Permohonan Anda</label>
-                <input type="file" name="docx_file" accept=".pdf">
+                <input type="file" name="pdf" accept=".pdf" required>
                 </div>
 							</div>
 						</div>

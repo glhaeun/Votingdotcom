@@ -97,6 +97,12 @@
             <span>Daftar Pengguna</span></a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="../admin/ganti_nama.php">
+            <i class="fas fa-user"></i>
+            <span>Pengubahan Nama</span></a>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider">
 

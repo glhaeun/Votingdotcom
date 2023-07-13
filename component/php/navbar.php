@@ -1,8 +1,15 @@
 <?php
-    if(isset($_SESSION['user_name'])) {
-        $user_name = $_SESSION['user_name'];
-        $user_name = strtok($user_name, " ");
+    if(isset($_SESSION['user_id'])) {
         $user_id = $_SESSION['user_id'];
+
+        $query = "SELECT * FROM users WHERE user_id = $user_id";
+        $get_userdata = $connect->prepare($query);
+        $get_userdata -> execute();
+        $fetch = $get_userdata->fetch(PDO::FETCH_ASSOC);
+
+        $user_name = $_SESSION['user_name'] = $fetch['nama'];
+        $user_name = strtok($user_name, " ");
+
     }
 
     if(isset($_GET['logout'])){
