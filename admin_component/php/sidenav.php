@@ -35,7 +35,7 @@
         <ul class="navbar-nav bg-red-voting sidebar sidebar-dark accordion" id="accordionSidebar">
 
 
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dash.php">
             <div class="sidebar-brand-text mx-3 logo" style="text-align: left ; font-size:25px; color:white; 
             font-weight: 300;
             line-height: 0.65;

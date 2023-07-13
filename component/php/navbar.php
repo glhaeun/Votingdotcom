@@ -41,7 +41,7 @@
         <div class="nav-container">
             <div class="nav-left">
                 <div class="logo-container">
-                    <a href="#">
+                    <a href="landing.php">
                         <h3>Voting</h3>
                         <p>.com</p>
                     </a>

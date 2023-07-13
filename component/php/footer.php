@@ -16,7 +16,7 @@
                 </ul>
             </div>
             <div class="col-md-3">
-                <h4>Kontak Kami</h4>
+                <h4>Hubungi Kami</h4>
                 <p>Email: evotingindonesia23@gmail.com</p>
                 <p>Telepon: +62 044132</p>
             </div>
