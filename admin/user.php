@@ -149,12 +149,12 @@ if(isset($_GET['type_of_users'])) {
                             <td class><?=$fetch_users['status']?> 
                             <?php if($fetch_users['status'] != "verified"){?>
                                 <div class ="action">
-                                <a href="user.php?update_status=verified&uid=<?=$fetch_users['user_id']?>" class=""><i class="fa-solid fa-circle-check"></i></a><a href="user.php?update_status=rejected&uid=<?=$fetch_users['user_id']?>" class="" onclick="return confirm('Are you sure to reject this user?');"><i class="fa-solid fa-circle-xmark"></i></a>
+                                <a href="user.php?update_status=verified&uid=<?=$fetch_users['user_id']?>" class=""><i class="fa-solid fa-circle-check"></i></a><a href="user.php?update_status=rejected&uid=<?=$fetch_users['user_id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menolak user ini?');"><i class="fa-solid fa-circle-xmark"></i></a>
                                 </div>
                             <?php } ?>
                         </td>
                             <td><div class="action">
-                                <a href="detail_user.php?detail_user=<?=$fetch_users['user_id']?>" class=""><i class="fa-solid fa-magnifying-glass"></i></a><a href="user.php?delete=<?=$fetch_users['user_id']?>" class="" onclick="return confirm('Are you sure to delete this user?');"><i class="fa-solid fa-trash"></i></a>
+                                <a href="detail_user.php?detail_user=<?=$fetch_users['user_id']?>" class=""><i class="fa-solid fa-magnifying-glass"></i></a><a href="user.php?delete=<?=$fetch_users['user_id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menghapus user ini?');"><i class="fa-solid fa-trash"></i></a>
                             </div></td>
 
 

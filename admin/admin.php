@@ -177,7 +177,7 @@
                     } else {
                         if($_SESSION['admin_level']=='master_admin'){
                         ?>
-                            <td><a href="admin.php?delete=<?=$fetch_admin['admin_id']?>" class="" onclick="return confirm('Are you sure to delete this admin?');"><i class="fa-solid fa-trash"></i></a></td>
+                            <td><a href="admin.php?delete=<?=$fetch_admin['admin_id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menghapus admin ini?');"><i class="fa-solid fa-trash"></i></a></td>
                         <?php
                     } else {
                         ?><td>ADMIN NORMAL</td>

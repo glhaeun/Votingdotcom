@@ -96,7 +96,7 @@ include '../admin_component/php/change_name.php'; ?>
                             <td><?=$fetch_data['nama_lama']?></td>
                             <td><?=$fetch_data['nama_baru']?></td>
                             <td><a style="text-decoration: none;" href="../admin_component/php/download_pdf.php?file_id=<?=$fetch_data['id']?>"><?= $fetch_data['nama_file'] ?></a></td>
-                            <td class="action" ><a href="ganti_nama.php?change_id=<?=$fetch_data['id']?>"><i class="fa-solid fa-circle-check"></i></a><a href="ganti_nama.php?delete_id=<?=$fetch_data['id']?>" class="" onclick="return confirm('Are you sure to reject the request?');"><i class="fa-solid fa-circle-xmark"></i></a></td>
+                            <td class="action" ><a href="ganti_nama.php?change_id=<?=$fetch_data['id']?>"><i class="fa-solid fa-circle-check"></i></a><a href="ganti_nama.php?delete_id=<?=$fetch_data['id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menolak pengubahan nama user ini?');"><i class="fa-solid fa-circle-xmark"></i></a></td>
                     </tr>
             
             <?php

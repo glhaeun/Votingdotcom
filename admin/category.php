@@ -93,7 +93,7 @@
                             <td><?=$fetch_category['end_tggl']?></td>
                             <td><?=$fetch_category['jml_calon']?></td>
                             <td><?=$fetch_category['status']?></td>
-                            <td><div class="action"><a href="update_category.php?update_category=<?=$fetch_category['category_id']?>"><i class="fa-solid fa-pen-to-square"></i></a><a href="category.php?delete_category=<?=$fetch_category['category_id']?>" class="" onclick="return confirm('Are you sure to delete this category?');"><i class="fa-solid fa-trash"></i></a>
+                            <td><div class="action"><a href="update_category.php?update_category=<?=$fetch_category['category_id']?>"><i class="fa-solid fa-pen-to-square"></i></a><a href="category.php?delete_category=<?=$fetch_category['category_id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menghapus kategori ini?');"><i class="fa-solid fa-trash"></i></a>
                             <a href="detail_category.php?detail_category=<?=$fetch_category['category_id']?>" class=""><i class="fa-solid fa-magnifying-glass"></i></a></div></td>
 
 

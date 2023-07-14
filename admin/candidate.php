@@ -101,7 +101,7 @@
                             <td class="truncate"><?=$fetch_candidate['misi'];?></td>
                             <td><?=$fetch_candidate['voting_name']?></td>
                             <td><?=$fetch_candidate['partai']?></td>
-                            <td class="action"><a href="update_candidate.php?update_candidate=<?=$fetch_candidate['id']?>"><i class="fa-solid fa-pen-to-square"></i></a><a href="candidate.php?delete_candidate=<?=$fetch_candidate['id']?>" class="" onclick="return confirm('Are you sure to delete this candidate?');"><i class="fa-solid fa-trash"></i></a></td>
+                            <td class="action"><a href="update_candidate.php?update_candidate=<?=$fetch_candidate['id']?>"><i class="fa-solid fa-pen-to-square"></i></a><a href="candidate.php?delete_candidate=<?=$fetch_candidate['id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menghapus kandidat ini?');"><i class="fa-solid fa-trash"></i></a></td>
 
 
                     </tr>

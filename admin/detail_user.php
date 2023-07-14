@@ -99,7 +99,7 @@ $fetch_user = $show_user->fetch(PDO::FETCH_ASSOC);
                             <?php
                                 if($fetch_user['status'] == "verified"){
                                     ?>
-                            <input type="submit" class="btn btn-danger" value="Hapus" name="delete" onclick="return confirm('Are you sure to delete this user?');">
+                            <input type="submit" class="btn btn-danger" value="Hapus" name="delete" onclick="return confirm('Apakah Anda yakin akan menghapus user ini?');">
                             <input type="submit" class="btn btn-secondary" value="Batal" name="cancel">
                                     <?php
                                 } else {
