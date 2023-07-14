@@ -20,7 +20,7 @@ if (isset($_GET['file_id'])) {
   if ($file) {
     $fileName = $file['nama_file'];
     $fileContent = $file['konten_file'];
-    $folder = "D:\\xampp\\htdocs\\Votingdotcom\\component\\"; // Specify the folder path with escaped backslashes
+    $folder = "../component/"; // Specify the folder path with escaped backslashes
 
     // Set appropriate headers for file download
     header('Content-Type: application/octet-stream');

@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['download_template'])) {
-  $templateFile = 'D:\xampp\htdocs\Votingdotcom\component\template.docx';
+  $templateFile = '../component/template.docx';
   $filename = 'template.docx';
 
   // Set appropriate headers for file download

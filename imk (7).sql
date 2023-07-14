@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Jul 09, 2023 at 10:22 AM
+-- Generation Time: Jul 14, 2023 at 02:10 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -69,7 +69,9 @@ CREATE TABLE `candidate` (
 --
 
 INSERT INTO `candidate` (`id`, `foto_calon`, `nama_calon`, `nama_jabatan`, `foto_wakil`, `nama_wakil`, `voting_name`, `visi`, `misi`, `partai`) VALUES
-(37, 'canvas (7).png', 'Jokowi', 'H', 'canvas (8).png', 'haeunlee', 'PILPRES2023', 'Visivisionvisimission my vision is to mission', '1. Misi\r\n2. Misimisi\r\n3. missy hey missy', 'Kiwi');
+(37, 'Jokowi.jpeg', 'Jokowi', 'H', 'Maruf.jpeg', 'haeunlee', 'PILPRES2023', 'Visivisionvisimission my vision is to mission', '1. Misi\r\n2. Misimisi\r\n3. missy hey missy', 'Kiwi'),
+(43, 'kandidat 1.jpg', 'Wonwoo', NULL, 'kandidat 1_1.jpg', 'Mingyu', 'PILPRES2023', 'Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay', '1. Misi Misi\r<br>2. Visi Visi\r<br>3. DC DC', 'Jeruk'),
+(44, 'kandidat 2_1.jpg', 'Dino', 'Capres12', 'kandidat 2.jpg', 'Kwan', 'Capres12', 'hai\r<br>hello\r<br>hello', 'hello\r<br>\r<br>\r<br>hai\r<br>hai\r<br>', 'Durian');
 
 -- --------------------------------------------------------
 
@@ -94,9 +96,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `nama`, `details`, `start_tggl`, `end_tggl`, `voting_name`, `jml_calon`, `status`, `nama_jabatan`) VALUES
-(16, 'PILPRES2023', 'SVT', '2023-12-31', '2023-12-31', NULL, '1', 'Active', 'SVT PRES'),
-(17, 'P', 'h', '2023-07-06', '2023-07-06', NULL, '0', 'Inactive', 'h'),
-(20, 'Capres', 'H', '2023-12-31', '2024-01-01', NULL, '0', 'Inactive', 'H');
+(16, 'PILPRES2023', 'SVT', '2023-07-10', '2023-07-11', NULL, '2', 'Active', 'SVT PRES'),
+(22, 'Capres12', 'gak ada', '2023-07-05', '2023-07-26', NULL, '1', 'Active', 'ga jelas');
 
 -- --------------------------------------------------------
 
@@ -197,6 +198,21 @@ INSERT INTO `csv_20230622220455` (`﻿Bus`, `Aman`, `Service`, `TidakHilang`, `T
 ('MJ', '3', '3', '3', '3'),
 ('PMTOH', '3', '2', '3', '3'),
 ('PMTOH', '3', '3', '3', '3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ganti_nama`
+--
+
+CREATE TABLE `ganti_nama` (
+  `id` int(11) NOT NULL,
+  `id_user` varchar(100) NOT NULL,
+  `nama_lama` varchar(100) NOT NULL,
+  `nama_baru` varchar(100) NOT NULL,
+  `nama_file` varchar(100) NOT NULL,
+  `konten_file` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=armscii8 COLLATE=armscii8_bin;
 
 -- --------------------------------------------------------
 
@@ -460,7 +476,72 @@ INSERT INTO `otp_expiry` (`id`, `otp`, `is_expired`, `create_at`, `email`) VALUE
 (0, '766835', 0, '2023-07-09 09:58:24', 'gaonkimchi@gmail.com'),
 (0, '409968', 0, '2023-07-09 09:59:02', 'haeunictsis@gmail.com'),
 (0, '998712', 1, '2023-07-09 09:59:07', 'haeunictsis@gmail.com'),
-(0, '399717', 0, '2023-07-09 10:06:09', 'haeunictsis@gmail.com');
+(0, '399717', 0, '2023-07-09 10:06:09', 'haeunictsis@gmail.com'),
+(0, '765231', 0, '2023-07-09 10:29:12', 'haeunictsis@gmail.com'),
+(0, '664454', 1, '2023-07-09 10:29:21', 'haeunictsis@gmail.com'),
+(0, '545512', 0, '2023-07-09 10:34:13', 'haeunictsis@gmail.com'),
+(0, '190681', 0, '2023-07-09 10:34:23', 'haeunictsis@gmail.com'),
+(0, '347316', 0, '2023-07-09 10:39:13', 'haeunictsis@gmail.com'),
+(0, '180200', 0, '2023-07-09 10:39:47', 'haeunictsis@gmail.com'),
+(0, '286868', 0, '2023-07-09 10:40:05', 'haeunictsis@gmail.com'),
+(0, '608353', 0, '2023-07-09 10:40:40', 'haeunictsis@gmail.com'),
+(0, '854886', 0, '2023-07-09 10:40:48', 'haeunictsis@gmail.com'),
+(0, '851291', 0, '2023-07-09 10:45:06', 'h@gmail.com'),
+(0, '255709', 0, '2023-07-09 10:45:44', 'h@gmail.com'),
+(0, '667442', 1, '2023-07-09 10:47:15', 'haeunictsis@gmail.com'),
+(0, '429475', 0, '2023-07-09 10:47:29', 'haeunictsis@gmail.com'),
+(0, '653948', 1, '2023-07-09 10:48:07', 'haeunictsis@gmail.com'),
+(0, '574506', 1, '2023-07-09 10:49:57', 'haeunictsis@gmail.com'),
+(0, '420709', 1, '2023-07-09 10:51:26', 'haeunictsis@gmail.com'),
+(0, '600915', 0, '2023-07-09 10:52:18', 'haeunictsis@gmail.com'),
+(0, '107227', 0, '2023-07-09 10:52:45', 'haeunictsis@gmail.com'),
+(0, '503618', 1, '2023-07-09 10:53:23', 'haeunictsis@gmail.com'),
+(0, '367499', 1, '2023-07-09 10:56:10', 'haeunictsis@gmail.com'),
+(0, '814796', 0, '2023-07-09 10:57:35', 'h@gmail.com'),
+(0, '921597', 0, '2023-07-09 11:06:47', 'haeun@gmail.com'),
+(0, '447566', 0, '2023-07-09 11:07:37', 'haeun@gmail.com'),
+(0, '726103', 0, '2023-07-09 17:45:09', 'haeunictsis@gmail.com'),
+(0, '573865', 0, '2023-07-09 17:45:29', 'haeunictsis@gmail.com'),
+(0, '989368', 0, '2023-07-09 18:03:44', 'haeun@gmail.com'),
+(0, '628315', 0, '2023-07-09 18:05:16', 'haeun@gmail.com'),
+(0, '131332', 0, '2023-07-09 18:05:32', 'haeunictsis@gmail.com'),
+(0, '258269', 0, '2023-07-09 18:06:47', 'haeunictsis@gmail.com'),
+(0, '211384', 0, '2023-07-09 18:07:36', 'haeunictsis@gmail.com'),
+(0, '426659', 0, '2023-07-09 18:08:09', 'haeunictsis@gmail.com'),
+(0, '930623', 0, '2023-07-09 18:08:53', 'haeunictsis@gmail.com'),
+(0, '596221', 0, '2023-07-09 18:08:58', 'haeunictsis@gmail.com'),
+(0, '676724', 0, '2023-07-09 18:09:03', 'haeunictsis@gmail.com'),
+(0, '644504', 1, '2023-07-09 18:09:29', 'haeunictsis@gmail.com'),
+(0, '785038', 0, '2023-07-09 18:14:06', 'haeun@gmail.com'),
+(0, '869060', 0, '2023-07-09 18:25:09', 'haeunictsis@gmail.com'),
+(0, '326188', 0, '2023-07-09 19:01:20', 'haeun@gmail.com'),
+(0, '861197', 0, '2023-07-10 12:19:04', 'haeun@gmail.com'),
+(0, '707255', 0, '2023-07-10 12:19:40', 'haeun@gmail.com'),
+(0, '296762', 1, '2023-07-10 17:07:57', 'haeunhaeun@gmail.com'),
+(0, '406088', 1, '2023-07-10 17:13:49', 'hahaha@gmail.com'),
+(0, '403453', 1, '2023-07-10 17:16:32', 'haeun1212@gmail.com'),
+(0, '533289', 1, '2023-07-10 18:17:38', 'haeun1112@gmail.com'),
+(0, '126222', 1, '2023-07-10 20:25:22', '333@gmail.com'),
+(0, '442781', 1, '2023-07-10 20:34:17', 'aa@gmail.com'),
+(0, '553244', 1, '2023-07-10 20:37:50', 'b@gmail.com'),
+(0, '254165', 1, '2023-07-10 20:44:41', 'f@gmail.com'),
+(0, '468461', 1, '2023-07-10 20:47:37', 'haeunlee21@gmail.com'),
+(0, '938033', 1, '2023-07-10 20:59:57', 'haeun1221@gmail.com'),
+(0, '785445', 1, '2023-07-10 21:03:52', 'haeunictsis2@gmail.com'),
+(0, '528908', 1, '2023-07-10 21:07:12', 'l@gmail.com'),
+(0, '873113', 1, '2023-07-10 21:09:09', 'haeunnn@gmail.com'),
+(0, '123786', 1, '2023-07-11 07:53:37', 'ejscassava@gmail.com'),
+(0, '316180', 1, '2023-07-11 13:06:40', 'haeunLee212121@gmail.com'),
+(0, '756938', 1, '2023-07-11 13:09:40', 'z@gmail.com'),
+(0, '115194', 1, '2023-07-11 13:55:57', 'hahahahahahahahah@gmail.com'),
+(0, '225468', 0, '2023-07-11 13:57:29', 'hahahahahahahahah@gmail.com'),
+(0, '827486', 1, '2023-07-11 14:32:28', 'elvina@gmail.com'),
+(0, '148311', 0, '2023-07-11 14:35:53', 'elvina@gmail.com'),
+(0, '520637', 0, '2023-07-11 14:41:30', 'elvina@gmail.com'),
+(0, '995408', 0, '2023-07-13 13:02:03', 'haeun@gmail.com'),
+(0, '287191', 0, '2023-07-13 21:44:34', 'haeun@gmail.com'),
+(0, '680591', 0, '2023-07-13 21:45:19', 'haeunictsis@gmail.com'),
+(0, '512619', 0, '2023-07-13 21:48:37', 'haeunictsis@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -1028,10 +1109,27 @@ INSERT INTO `users` (`user_id`, `nama`, `nomor`, `email`, `NIK`, `password`, `fo
 (19, 'Ha Eun', '0812312388', 'hihihi@gmail.com', '1201201201209', '@Abcd12', '', '', 'verified'),
 (21, 'Ha Eun', '08116361477', 'haho@gmail.com', '1212343456567', '@Abcd12', '', '', 'verified'),
 (23, 'Ha Eun', '087812341234', 'haeuntes100@gmail.com', '1234567899999', '@Abcd12', '', '', 'verified'),
-(26, 'haeunlee', '08998123123', 'h@gmail.com', '8877665544321', 'haeunLee12!', 'canvas (6).png', '../img/user/canvas (6).png', 'pending'),
+(26, 'Grace Lee', '08998123123', 'haeunictsis@gmail.com', '8877665544321', 'haeunLee12!', 'canvas (6).png', '../img/user/canvas (6).png', 'verified'),
 (27, 'Ha Eun', '089988989827', 'h@gmail.com', '1231231231231', 'haeunLee12!', 'bannerconvert.png', '../img/user/caps.png', 'pending'),
-(28, 'haeun', '08116361458', 'haeunictsis@gmail.com', '1234567890000', 'haha12!L', 'bannerconvert.png', '../img/user/canvas (6).png', 'verified'),
-(29, 'Grace Lee', '0891231234', 'ejscassava@gmail.com', '1230012300123', 'haeunLee12!', 'bannerconvert.png', '../img/user/canvas (6).png', 'pending');
+(28, 'haeun', '08116361458', 'haeunictsis@gmail.com', '1234567890000', 'haeunLee12!!h', 'bannerconvert.png', '../img/user/canvas (6).png', 'verified'),
+(29, 'Grace Lee', '0891231234', 'ejscassava@gmail.com', '1230012300123', 'ubah12!L', 'bannerconvert.png', '../img/user/canvas (6).png', 'pending'),
+(30, 'haeunLee', '0877777777', 'haeunhaeun@gmail.com', '1234560000123', 'haeunLee12!', 'Frame 2 (1).png', 'D:xampp	mpphpC18A.tmp', 'pending'),
+(31, 'hahaha', '08666666666', 'hahaha@gmail.com', '0000000000000', 'haeunLee12!', 'Frame 2 (1).png', 'D:xampp	mpphp1C94.tmp', 'pending'),
+(32, 'haeun', '082222222222', 'haeun1212@gmail.com', '1111111111111', 'haeunLee12!', 'A1.jpeg', 'D:xampp	mpphp9CF8.tmp', 'pending'),
+(33, 'haeun', '08555555555', 'haeun1112@gmail.com', '3333333333333', 'haeunLee12!', '', 'canvas (8).png', 'pending'),
+(34, 'haeun', '08333333333', '333@gmail.com', '9796959493929', 'haeunLee12!', '', 'Frame 2 (1).png', 'pending'),
+(35, 'haeun', '0812312376512', 'aa@gmail.com', '9999989999999', 'haeunLee12!', '', 'canvas (1).jpeg', 'pending'),
+(36, 'haeun', '08990000001', 'b@gmail.com', '0000000000012', 'haeunLee12!', '', 'Frame 2.png', 'pending'),
+(37, 'haha', '08123987123', 'f@gmail.com', '9999922222221', 'haeunLee12!', '', 'kira kira gini (6).png', 'pending'),
+(38, 'hahalolo', '08123123443', 'haeunlee21@gmail.com', '0071231231231', 'haeunLEe12!', '', 'Frame 2 (1).png', 'pending'),
+(39, 'haeun', '0899876123', 'haeun1221@gmail.com', '0000900000000', 'haeunLee12!', '', 'candy background.png', 'pending'),
+(40, 'haeun', '08123567123', 'haeunictsis2@gmail.com', '0000700000000', 'haeunLee12!', '', 'kira kira gini (5).png', 'pending'),
+(41, 'haeun', '0844444444', 'l@gmail.com', '0000000000019', 'haeunLee12!', '', 'kira kira gini (3).png', 'pending'),
+(42, 'haeun', '0866666667', 'haeunnn@gmail.com', '1234567890129', 'haeunLee12!', '1234567890129_fotoKTP_kira kira gini (1).png', 'Untitled design (1).png', 'verified'),
+(43, 'haeun', '0898123123', 'haeunLee212121@gmail.com', '1231230808808', 'haeunLee12!', '1231230808808_fotoKTP_Outlook-signature_.png', '1231230808808_fotoWajah_candidate2.jpg', 'verified'),
+(44, 'test', '082101000010', 'z@gmail.com', '0000000200000', 'haeunLee12!', '0000000200000_fotoKTP_banner1a.webp', '0000000200000_fotoWajah_unnamed.png', 'pending'),
+(45, 'haeun', '081212212112', 'hahahahahahahahah@gmail.com', '8888888888811', 'haeunLee12!', '8888888888811_fotoKTP_baner111.png', '8888888888811_fotoWajah_banner1a.webp', 'verified'),
+(46, 'elvina', '0823746237647', 'elvina@gmail.com', '8888888881212', 'elvinaLim00!', '8888888881212_fotoKTP_baner111.png', '8888888881212_fotoWajah_banner1a.webp', 'verified');
 
 -- --------------------------------------------------------
 
@@ -1055,7 +1153,10 @@ CREATE TABLE `votes` (
 
 INSERT INTO `votes` (`id`, `category_name`, `user_id`, `NIK`, `user_nama`, `choose`, `voting_time`) VALUES
 (1, 'PILPRES2023', 1, '1231231231231', 'glhaeun', 'Jokowi', '2023-07-09'),
-(7, 'PILPRES2023', 28, '1234567890000', 'haeun', 'Jokowi', '2023-07-09');
+(7, 'PILPRES2023', 28, '1234567890000', 'haeun', 'Jokowi', '2023-07-09'),
+(8, 'PILPRES2023', 26, '8877665544321', 'haeunlee', 'Jokowi', '2023-07-09'),
+(9, 'PILPRES2023', 45, '8888888888811', 'haeun', 'Wonwoo', '2023-07-11'),
+(10, 'PILPRES2023', 46, '8888888881212', 'elvina', 'Wonwoo', '2023-07-11');
 
 --
 -- Indexes for dumped tables
@@ -1078,6 +1179,12 @@ ALTER TABLE `candidate`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `ganti_nama`
+--
+ALTER TABLE `ganti_nama`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `prevoting`
@@ -1111,13 +1218,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `candidate`
 --
 ALTER TABLE `candidate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `ganti_nama`
+--
+ALTER TABLE `ganti_nama`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `prevoting`
@@ -1129,13 +1242,13 @@ ALTER TABLE `prevoting`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
