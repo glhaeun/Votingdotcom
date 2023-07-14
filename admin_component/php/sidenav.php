@@ -99,7 +99,7 @@
 
         <li class="nav-item">
             <a class="nav-link" href="../admin/ganti_nama.php">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-solid fa-user-pen"></i>
             <span>Pengubahan Nama</span></a>
         </li>
 

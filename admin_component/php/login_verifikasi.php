@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['nama_admin'] = $user['nama_admin'];
         $_SESSION['admin_level'] = $user['level'];
 
-        flash('Success', 'Anda berhasil Login', FLASH_SUCCESS);
+        flash('Success', 'Anda berhasil masuk', FLASH_SUCCESS);
         header("location:dash.php");
         exit();
         // Redirect to the admin page or any desired page

@@ -32,7 +32,7 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
         swal({
-            title: "Logout Successfully!",
+            title: "Anda berhasil keluar!",
             text: "",
             icon: "success",
             

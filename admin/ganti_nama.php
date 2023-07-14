@@ -57,7 +57,7 @@ include '../admin_component/php/change_name.php'; ?>
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4" style="display: grid;">
-            <h1 class="h3 mb-0 text-gray-800">Daftar Pengguna (Pergantian Nama)</h1>
+            <h1 class="h3 mb-0 text-gray-800">Daftar Pengguna (Penggantian Nama)</h1>
         </div>
         <!-- Content Row -->
         
