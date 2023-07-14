@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Jul 14, 2023 at 02:10 PM
+-- Generation Time: Jul 14, 2023 at 05:28 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -69,9 +69,10 @@ CREATE TABLE `candidate` (
 --
 
 INSERT INTO `candidate` (`id`, `foto_calon`, `nama_calon`, `nama_jabatan`, `foto_wakil`, `nama_wakil`, `voting_name`, `visi`, `misi`, `partai`) VALUES
-(37, 'Jokowi.jpeg', 'Jokowi', 'H', 'Maruf.jpeg', 'haeunlee', 'PILPRES2023', 'Visivisionvisimission my vision is to mission', '1. Misi\r\n2. Misimisi\r\n3. missy hey missy', 'Kiwi'),
-(43, 'kandidat 1.jpg', 'Wonwoo', NULL, 'kandidat 1_1.jpg', 'Mingyu', 'PILPRES2023', 'Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay', '1. Misi Misi\r<br>2. Visi Visi\r<br>3. DC DC', 'Jeruk'),
-(44, 'kandidat 2_1.jpg', 'Dino', 'Capres12', 'kandidat 2.jpg', 'Kwan', 'Capres12', 'hai\r<br>hello\r<br>hello', 'hello\r<br>\r<br>\r<br>hai\r<br>hai\r<br>', 'Durian');
+(37, 'Jokowi.jpeg', 'Jokowi', 'H', 'Maruf.jpeg', 'haeunlee', 'PILPRES2023', 'Visivisionvisimission my vision is to mission', '1. Misi\r\n2. Misimisi\r\n3. missy hey missy', 'Kiwiz'),
+(43, 'kandidat 1.jpg', 'Wonwoo', NULL, 'kandidat 1_1.jpg', 'Mingyu', '', 'Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay Vis mis viiiiiiiiiiiiiiiis miiiiiiiiiiiiiiiiiiiiiis visisisisimisisisisi yeay', '1. Misi Misi\r<br>2. Visi Visi\r<br>3. DC DC', 'Apelo'),
+(45, 'Frame 2 (2).png', 'nama1', NULL, 'kira kira gini (6).png', 'nama2', '', 'visi is to visisisiisi', 'msiisisisisi\r<br>1. misis\r<br>2. disis\r<br>', 'Mango'),
+(46, 'kira kira gini (6).png', 'Jason Tjoa', NULL, 'kira kira gini (3).png', 'Ziven Louis', '', 'VIIIIIIIIIIIIIIIIIIIISI', '1. one\r<br>2. two\r<br>4. four', 'Kiwiz');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `nama`, `details`, `start_tggl`, `end_tggl`, `voting_name`, `jml_calon`, `status`, `nama_jabatan`) VALUES
-(16, 'PILPRES2023', 'SVT', '2023-07-10', '2023-07-11', NULL, '2', 'Active', 'SVT PRES'),
+(16, 'PILPRES2023', 'SVT', '2023-07-10', '2023-07-11', NULL, '1', 'Active', 'SVT PRES'),
 (22, 'Capres12', 'gak ada', '2023-07-05', '2023-07-26', NULL, '1', 'Active', 'ga jelas');
 
 -- --------------------------------------------------------
@@ -541,7 +542,30 @@ INSERT INTO `otp_expiry` (`id`, `otp`, `is_expired`, `create_at`, `email`) VALUE
 (0, '995408', 0, '2023-07-13 13:02:03', 'haeun@gmail.com'),
 (0, '287191', 0, '2023-07-13 21:44:34', 'haeun@gmail.com'),
 (0, '680591', 0, '2023-07-13 21:45:19', 'haeunictsis@gmail.com'),
-(0, '512619', 0, '2023-07-13 21:48:37', 'haeunictsis@gmail.com');
+(0, '512619', 0, '2023-07-13 21:48:37', 'haeunictsis@gmail.com'),
+(0, '745574', 0, '2023-07-14 14:24:34', 'haeunictsis@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `partai`
+--
+
+CREATE TABLE `partai` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `pemimpin` varchar(100) NOT NULL,
+  `ideologi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=armscii8 COLLATE=armscii8_bin;
+
+--
+-- Dumping data for table `partai`
+--
+
+INSERT INTO `partai` (`id`, `nama`, `pemimpin`, `ideologi`) VALUES
+(1, 'Apelo', 'Megawati Soekarnoputri', 'Marhaenisme'),
+(2, 'Mango', 'Airlangga Hartarto', 'Konservatisme\r\n'),
+(4, 'Kiwiz', 'Antonios Simatupang', 'Konservatisme Nasional');
 
 -- --------------------------------------------------------
 
@@ -1187,6 +1211,12 @@ ALTER TABLE `ganti_nama`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `partai`
+--
+ALTER TABLE `partai`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `prevoting`
 --
 ALTER TABLE `prevoting`
@@ -1218,7 +1248,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `candidate`
 --
 ALTER TABLE `candidate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -1231,6 +1261,12 @@ ALTER TABLE `category`
 --
 ALTER TABLE `ganti_nama`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `partai`
+--
+ALTER TABLE `partai`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `prevoting`
