@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['download_template'])) {
-  $templateFile = '../component/template.docx';
+  $templateFile = 'Template.docx';
   $filename = 'template.docx';
 
   // Set appropriate headers for file download
