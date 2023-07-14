@@ -31,7 +31,7 @@ if (isset($_POST['kirim_surat'])) {
             $fileTmpPath = $_FILES['pdf']['tmp_name'];
             $fileName = $_FILES['pdf']['name'];
             $fileSize = $_FILES['pdf']['size'];
-            $destinationFolder = 'D:/xampp/htdocs/Votingdotcom/surat/';
+            $destinationFolder = '../surat/';
             $destinationPath = $destinationFolder . $fileName;
 
             if (move_uploaded_file($fileTmpPath, $destinationPath)) {
