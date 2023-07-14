@@ -127,11 +127,18 @@ $fetch_candidate = $show_candidate->fetch(PDO::FETCH_ASSOC);
                                 <div class="form-group col-md-6">
                                 <label for="parpol">Partai Politik:</label>
                                 <select name="parpol" id=""  class="form-control">
-                                    <option  <?php if("Mango" == trim($fetch_candidate['partai'])) echo "selected" ?> value="Mango">Apel</option>
-                                    <option  <?php if("Kiwi" == trim($fetch_candidate['partai'])) echo "selected" ?> value="Kiwi">Kiwi</option>
-                                    <option  <?php if("Jeruk" == trim($fetch_candidate['partai'])) echo "selected" ?> value="Jeruk">Jeruk</option>
-                                    <option  <?php if("Durian" == trim($fetch_candidate['partai'])) echo "selected" ?> value="Durian">Durian</option>
-                                    <option  <?php if("Nanas" == trim($fetch_candidate['partai'])) echo "selected" ?> value="Nanas">Nanas</option>
+                                        <?php 
+                                            $query ="SELECT nama FROM partai";
+                                            $show_partai = $connect->prepare($query);
+                                            $show_partai -> execute();
+                                            if ($show_partai->rowCount()>0) {
+                                                while($fetch_partai = $show_partai->fetch(PDO::FETCH_ASSOC)){
+                                                    $fetch_partai = implode($fetch_partai);
+                                                ?><option <?php if(trim($fetch_partai) == trim($fetch_candidate['partai'])) echo "selected" ?> value="<?=$fetch_partai?>"><?=$fetch_partai?></option>
+                                                <?php
+                                            } 
+                                            } 
+                                            ?>
                                 </select>
                                 </div>
                             </div>

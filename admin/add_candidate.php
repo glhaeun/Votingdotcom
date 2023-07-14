@@ -110,11 +110,18 @@
                                 <div class="form-group col-md-6">
                                 <label for="parpol">Partai Politik:</label>
                                 <select name="parpol" id=""  class="form-control">
-                                    <option value="Mango" select>Apel</option>
-                                    <option value="Kiwi">Kiwi</option>
-                                    <option value="Jeruk">Jeruk</option>
-                                    <option value="Durian">Durian</option>
-                                    <option value="Nanas">Nanas</option>
+                                        <?php 
+                                            $query ="SELECT nama FROM partai";
+                                            $show_partai = $connect->prepare($query);
+                                            $show_partai -> execute();
+                                            if ($show_partai->rowCount()>0) {
+                                                while($fetch_partai = $show_partai->fetch(PDO::FETCH_ASSOC)){
+                                                    $fetch_partai = implode($fetch_partai);
+                                                ?><option value="<?=$fetch_partai?>"><?=$fetch_partai?></option>
+                                                <?php
+                                            } 
+                                            } 
+                                            ?>
                                 </select>
                                 </div>
                                 

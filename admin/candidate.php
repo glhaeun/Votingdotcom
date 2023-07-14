@@ -59,6 +59,7 @@
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">
                                 <a href="add_candidate.php"><input type="button" value="Tambah Kandidat" class="btn btn-primary"></a>
+                                <a href="partai.php"><input type="button" value="Daftar Partai" class="btn btn-primary"></a>
                             </h6>
                         </div>
                         <div class="card-body">
