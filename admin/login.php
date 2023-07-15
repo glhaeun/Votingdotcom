@@ -42,7 +42,7 @@
                 <label for="password">Kata Sandi:</label>
                 <input type="password" id="password" name="password" required>
                 <div class="checkbox-label">
-                    <input type="checkbox" id="show-password" onchange="togglePasswordVisibility()">
+                    <input type="checkbox" id="show-password" onchange="showPassword()">
                     <div class="passw">
                     <label for="show-password">Tunjukkan Kata Kunci</label>
                     </div>
@@ -56,6 +56,16 @@
         </form>
     </div>
 
+    <script>
+        function showPassword() {
+            var show = document.getElementById("password");
+            if (show.type == 'password') {
+                show.type='text';
+            } else{
+                show.type='password';
+            }
+        }
+    </script>
 
 </body>
 </html>
