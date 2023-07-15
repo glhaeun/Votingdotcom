@@ -65,8 +65,8 @@
                                 <div class="form-group col-md-6">
                                 <label for="status">Status</label>
                                 <select id="inputStatus" class="form-control" name="status" required>
-                                    <option selected>Aktif</option>
-                                    <option disabled>Tidak Aktif</option>
+                                    <option selected>Active</option>
+                                    <option disabled>Inactive</option>
                                     <option disabled>Tutup</option>
                                 </select>
                                 </div>
