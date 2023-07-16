@@ -496,8 +496,8 @@ swiper-container {
 
 .containerFotoCalon {
   display: flex;
-  align-items: end;
-  align-self: end;
+  /* align-items: end;
+  align-self: end; */
 }
 
 .swiper-container .temp {
