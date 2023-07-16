@@ -4,10 +4,8 @@ if(isset($_POST['update_profile'])){
         
     $id = $_SESSION['user_id'];
 
-    $nama = $_POST['nama'];
-    $NIK = $_POST['NIK'];
     $nomor = $_POST['nomor'];
-    $email = $_POST['email'];
+    
 
     $query = "SELECT * FROM users WHERE user_id = ?";
     $stmt = $connect->prepare($query);
@@ -15,7 +13,7 @@ if(isset($_POST['update_profile'])){
     $existingUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($existingUser) {
-    if (($nama == $existingUser['nama'] && $email == $existingUser['email'] && $NIK == $existingUser['NIK'] && $nomor == $existingUser['nomor'] )) {
+    if (( $nomor == $existingUser['nomor'] )) {
         ?>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
@@ -24,33 +22,6 @@ if(isset($_POST['update_profile'])){
         <?php        
         } 
         else {
-            $id = (int)$id;
-            $query = "SELECT * FROM `users` WHERE user_id <> ? AND NIK = ?";
-            $get = $connect->prepare($query);
-            $get->execute([$id, $_POST['NIK']]);
-
-            if($get->rowCount()>0){
-                ?>
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            <script>
-            swal("NIK ini sudah terdaftar oleh user lain.");
-            </script>   
-            <?php 
-
-            } else {
-                $id = (int)$id;
-        $query = "SELECT * FROM `users` WHERE user_id <> ? AND email = ?";
-        $get = $connect->prepare($query);
-        $get->execute([$id, $_POST['email']]);
-        
-        if ($get->rowCount()>0) {
-            ?>
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            <script>
-            swal("Email ini sudah terdaftar oleh user lain.");
-            </script>   
-        <?php  
-        } else {
             $id = (int)$id;
             $query = "SELECT * FROM `users` WHERE user_id <> ? AND nomor = ?";
             $get = $connect->prepare($query);
@@ -65,29 +36,9 @@ if(isset($_POST['update_profile'])){
             <?php  
             } else {
             $change = 0;
-        if (!empty($name)){
-            $query = "UPDATE users SET name ='".$name."' WHERE user_id = $id";
-            $updatedb= $connect->prepare($query);
-            $updatedb ->execute();
-            $change++;     
-        }
-
-        if (!empty($email)){
-            $query = "UPDATE users SET email ='".$email."' WHERE user_id = $id";
-            $updatedb= $connect->prepare($query);
-            $updatedb ->execute();
-            $change++;     
-        }
-
+        
         if (isset($nomor)){
             $query = "UPDATE users SET nomor ='$nomor' WHERE user_id = $id";
-            $updatedb= $connect->prepare($query);
-            $updatedb ->execute();
-            $change++;     
-        }
-
-        if (isset($NIK)){
-            $query = "UPDATE users SET NIK ='$NIK' WHERE user_id = $id";
             $updatedb= $connect->prepare($query);
             $updatedb ->execute();
             $change++;     
@@ -121,10 +72,10 @@ if(isset($_POST['update_profile'])){
             }
 
     }
-}
 
 
-}
+
+
 
 
 
