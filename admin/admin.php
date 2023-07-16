@@ -163,11 +163,12 @@
     $select_admin =  $connect->prepare($query);
     $select_admin -> execute();
 
+    $index = 1;
     if($select_admin->rowCount()>0){
         while ($fetch_admin = $select_admin ->fetch(PDO::FETCH_ASSOC)){
             ?>
                         <tr>
-                            <td><?=$fetch_admin['admin_id']?></td>
+                            <td><?=$index?></td>
                             <td><?=$fetch_admin['nama_admin']?></td>
                             <td><?=$fetch_admin['username']?></td>
                     <?php if($fetch_admin['level']=='master_admin'){
@@ -185,6 +186,7 @@
                         }
                     }?> </tr>       
                     <?php
+                        $index++;
         }
     }
                                     

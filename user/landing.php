@@ -115,7 +115,14 @@
             <select id="daftarvote" class="form-control" name="daftarvote" onchange='this.form.submit()' required>
                     <!-- <option value="--" selected>--</option> -->
                     <?php 
-                        $query ="SELECT nama FROM category WHERE status = 'Active'";
+                        date_default_timezone_set('Asia/Jakarta');
+
+                        $currentDate = date('Y-m-d');
+                        // berjalan skrg + yg tutup
+                        // $query = "SELECT nama FROM category WHERE (status = 'Active' AND ('$currentDate' BETWEEN start_tggl AND end_tggl)) OR (status = 'Tutup' AND end_tggl < '$currentDate')";
+                        
+                        // yg berjalan skrg only
+                        $query ="SELECT nama FROM category WHERE status ='Active' AND start_tggl <= '$currentDate' AND end_tggl >= '$currentDate'";
                         $show_category = $connect->prepare($query);
                         $show_category -> execute();
                         echo $show_category->rowCount();

@@ -88,11 +88,12 @@
     $select_candidate =  $connect->prepare($query);
     $select_candidate -> execute();
 
+    $index = 1;
     if($select_candidate->rowCount()>0){
         while ($fetch_candidate = $select_candidate ->fetch(PDO::FETCH_ASSOC)){
             ?>
                         <tr>
-                            <td><?=$fetch_candidate['id']?></td>
+                            <td><?=$index?></td>
                             <td><img src="../img/candidate/<?=$fetch_candidate['foto_calon']?>" alt=""></td>
                             <td><?=$fetch_candidate['nama_calon']?></td>
                             <td><img src="../img/candidate/<?=$fetch_candidate['foto_wakil']?>" alt=""></td>
@@ -107,6 +108,7 @@
                     </tr>
             
             <?php
+                $index ++;
         }
     }
                                     

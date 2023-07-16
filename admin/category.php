@@ -81,17 +81,23 @@
     $query ="SELECT * FROM category";
     $select_category =  $connect->prepare($query);
     $select_category -> execute();
-
+    
+    $index = 1;
     if($select_category->rowCount()>0){
         while ($fetch_category = $select_category ->fetch(PDO::FETCH_ASSOC)){
+                $query ="SELECT * FROM candidate WHERE voting_name = ?";
+                $get =  $connect->prepare($query);
+                $nama = $fetch_category['nama'];
+                $get -> execute([$nama]);
+                $number_of_candidate = $get->rowCount();
             ?>
                         <tr>
-                            <td><?=$fetch_category['category_id']?></td>
+                            <td><?=$index?></td>
                             <td><?=$fetch_category['nama']?></td>
                             <td><?=$fetch_category['details']?></td>
                             <td><?=$fetch_category['start_tggl']?></td>
                             <td><?=$fetch_category['end_tggl']?></td>
-                            <td><?=$fetch_category['jml_calon']?></td>
+                            <td><?=$number_of_candidate?></td>
                             <td><?=$fetch_category['status']?></td>
                             <td><div class="action"><a href="update_category.php?update_category=<?=$fetch_category['category_id']?>"><i class="fa-solid fa-pen-to-square"></i></a><a href="category.php?delete_category=<?=$fetch_category['category_id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menghapus kategori ini?');"><i class="fa-solid fa-trash"></i></a>
                             <a href="detail_category.php?detail_category=<?=$fetch_category['category_id']?>" class=""><i class="fa-solid fa-magnifying-glass"></i></a></div></td>
@@ -100,6 +106,7 @@
                     </tr>
             
             <?php
+            $index++;
         }
     }
                                     

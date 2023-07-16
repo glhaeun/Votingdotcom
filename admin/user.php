@@ -136,12 +136,12 @@ if(isset($_GET['type_of_users'])) {
         $select_users -> execute();
     }
     
-
+    $index = 1;
     if($select_users->rowCount()>0){
         while ($fetch_users = $select_users ->fetch(PDO::FETCH_ASSOC)){
             ?>
                         <tr>
-                            <td><?=$fetch_users['user_id']?></td>
+                            <td><?=$index?></td>
                             <td><?=$fetch_users['nama']?></td>
                             <td><?=$fetch_users['nomor']?></td>
                             <td><?=$fetch_users['email']?></td>
@@ -161,6 +161,7 @@ if(isset($_GET['type_of_users'])) {
                     </tr>
             
             <?php
+                $index++;
         }
     }
                                     
