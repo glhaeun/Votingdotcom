@@ -63,7 +63,7 @@ if($is_valid_password ){
     <script>
     swal({
         title: "Invalid!",
-        text: "New password can't be the same as the old!",
+        text: "Password baru tidak boleh sama dengan password sebelumnya!",
         icon: "error",
         
     }).then(function() {
@@ -78,7 +78,7 @@ if($is_valid_password ){
     <script>
     swal({
         title: "Invalid!",
-        text: "Passwords and confirm password don't match!",
+        text: "Passwords dan konfirmasi password tidak sesuai!",
         icon: "error",
         
     }).then(function() {
@@ -93,7 +93,7 @@ if($is_valid_password ){
     <script>
     swal({
         title: "Invalid!",
-        text: "Passwords should be 7-15 length, at least one digit, at least one special character !",
+        text: "Kata sandi harus sepanjang 7-15, setidaknya satu digit, setidaknya satu karakter khusus !",
         icon: "error",
         
     }).then(function() {

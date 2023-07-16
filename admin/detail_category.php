@@ -124,7 +124,7 @@ $jumlah_calon = $row['jml_calon'];
                 </td>
                 <td class="title">
                   <a class="candidate-list-favourite order-2 text-danger" href="#"></a>
-                  <span class="candidate-list-time order-1"><?=$fetch_candidate['visimisi']?></span>
+                  <span class="candidate-list-time order-1">Visi:<br><?=$fetch_candidate['visi']?><br>Misi:<br><?=$fetch_candidate['misi']?></span>
                 </td>
                 <td>
                 <i class="fas fa-map-marker-alt pr-1"></i><?=$fetch_candidate['partai']?></li>

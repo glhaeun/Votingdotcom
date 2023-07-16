@@ -90,6 +90,9 @@ if(isset($_POST['update_password'])) {
     $check_password -> execute();
     $fetch_password = $check_password -> fetch(PDO::FETCH_ASSOC);
 
+    $password_pattern = '/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/';
+    $is_valid_password = preg_match($password_pattern, $password); 
+
     if($check_password->rowCount()>0) {
         if ($current != $fetch_password['password'] ){
             ?>
@@ -99,6 +102,8 @@ if(isset($_POST['update_password'])) {
             </script>   
             <?php         
             } else {
+                if($is_valid_password ){
+
             if ($password != $cpassword ){
                 ?>
                 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -119,7 +124,8 @@ if(isset($_POST['update_password'])) {
                 $updatedb= $connect->prepare($query);
                 $updatedb ->execute();
                 ?>
-                <script type="text/javascript">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script>
                 swal({
                     title: "Berhasil!",
                     text: "Anda berhasil mengubah kata sandi!",
@@ -130,6 +136,15 @@ if(isset($_POST['update_password'])) {
             }
              
             }
+        } else {
+            ?>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script>
+            swal("Kata sandi harus sepanjang 7-15, setidaknya satu digit, setidaknya satu karakter khusus !",
+            );    
+            </script>
+            <?php
+        }
         }
 
     }

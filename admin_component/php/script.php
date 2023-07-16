@@ -274,6 +274,7 @@ if (!empty($votingtipe)){
     $check = $connect -> prepare($query);
     $check ->execute();
     $fetch = $check->fetch(PDO::FETCH_ASSOC);
+    $name = $fetch['nama_calon'];
     if($fetch['voting_name'] != ''){
         $category_name = $fetch['voting_name'];
         $query = "SELECT * FROM category WHERE nama = '$category_name'";
@@ -297,6 +298,9 @@ if (!empty($votingtipe)){
             $update_category -> execute();
         }
 
+        $query = "DELETE FROM votes WHERE category_name = '$category_name' AND choose = '$name'";
+        $delete_votes = $connect->prepare($query);
+        $delete_votes -> execute();
     }
 
     $query = "SELECT * FROM candidate WHERE voting_name = '' AND id = $update";
@@ -550,7 +554,6 @@ if(isset($_GET['delete_detail'])){
         flash_alert('Message', 'Berhasil menghapus calon dari kategori!', FLASH_SUCCESS);
     }
 
-    header('refresh:3;url=detail_category.php');
 }?>
 
 
@@ -682,6 +685,8 @@ if(isset($_GET['delete_detail'])){
         $query="DELETE FROM users WHERE user_id = ?";
         $del_category = $connect->prepare($query);
         $del_category -> execute([$delete_id]);
+
+
     
         $query="DELETE FROM votes WHERE user_id = ?";
         $del_votes = $connect->prepare($query);

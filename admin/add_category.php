@@ -59,7 +59,7 @@
                         <form action="" method="post">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                <label for="votetitle">Judul Pemungutan Suara:</label>
+                                <label for="votetitle">Judul:</label>
                                 <input type="text" class="form-control" name="votetitle" required>
                                 </div>
                                 <div class="form-group col-md-6">

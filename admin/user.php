@@ -154,7 +154,7 @@ if(isset($_GET['type_of_users'])) {
                             <?php } ?>
                         </td>
                             <td><div class="action">
-                                <a href="detail_user.php?detail_user=<?=$fetch_users['user_id']?>" class=""><i class="fa-solid fa-magnifying-glass"></i></a><a href="user.php?delete=<?=$fetch_users['user_id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menghapus user ini?');"><i class="fa-solid fa-trash"></i></a>
+                                <a href="detail_user.php?detail_user=<?=$fetch_users['user_id']?>" class=""><i class="fa-solid fa-magnifying-glass"></i></a><a href="user.php?delete_user=<?=$fetch_users['user_id']?>" class="" onclick="return confirm('Apakah Anda yakin akan menghapus user ini?');"><i class="fa-solid fa-trash"></i></a>
                             </div></td>
 
 
