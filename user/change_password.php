@@ -48,7 +48,7 @@ if($is_valid_password ){
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
     swal({
-        title: "Success!",
+        title: "Berhasil!",
         text: "Berhasil mengubah kata sandi",
         icon: "success",
         

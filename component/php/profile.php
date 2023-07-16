@@ -50,7 +50,7 @@ if(isset($_POST['update_profile'])){
                 <script>
                 swal({
                     title: "Berhasil!",
-                    text: "Data Anda sudah diupdate",
+                    text: "Data Anda sudah diubah",
                     icon: "success",
                     
                 });

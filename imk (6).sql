@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2023 at 04:53 PM
+-- Generation Time: Jul 16, 2023 at 05:13 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -555,7 +555,12 @@ INSERT INTO `otp_expiry` (`id`, `otp`, `is_expired`, `create_at`, `email`) VALUE
 (0, '512619', 0, '2023-07-13 21:48:37', 'haeunictsis@gmail.com'),
 (0, '745574', 0, '2023-07-14 14:24:34', 'haeunictsis@gmail.com'),
 (0, '650007', 1, '2023-07-16 16:18:52', 'tes@gmail.com'),
-(0, '262696', 0, '2023-07-16 16:20:59', 'tes@gmail.com');
+(0, '262696', 0, '2023-07-16 16:20:59', 'tes@gmail.com'),
+(0, '255112', 0, '2023-07-16 17:05:47', 'tes@gmail.com'),
+(0, '173810', 0, '2023-07-16 17:07:49', 'tes@gmail.com'),
+(0, '869694', 1, '2023-07-16 17:08:04', 'tes@gmail.com'),
+(0, '191621', 0, '2023-07-16 17:11:09', 'tes@gmail.com'),
+(0, '256215', 0, '2023-07-16 17:11:33', 'tes@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -1169,7 +1174,7 @@ INSERT INTO `users` (`user_id`, `nama`, `nomor`, `email`, `NIK`, `password`, `fo
 (44, 'test', '082101000010', 'z@gmail.com', '0000000200000', 'haeunLee12!', '0000000200000_fotoKTP_banner1a.webp', '0000000200000_fotoWajah_unnamed.png', 'pending'),
 (45, 'haeun', '081212212112', 'hahahahahahahahah@gmail.com', '8888888888811', 'haeunLee12!', '8888888888811_fotoKTP_baner111.png', '8888888888811_fotoWajah_banner1a.webp', 'verified'),
 (46, 'elvina', '0823746237647', 'elvina@gmail.com', '8888888881212', 'elvinaLim00!', '8888888881212_fotoKTP_baner111.png', '8888888881212_fotoWajah_banner1a.webp', 'verified'),
-(47, 'Abfzbzb', '0812345678', 'tes@gmail.com', '1222211111111', 'Aaaa@12', '1222211111111_fotoKTP_watermark.png', '1222211111111_fotoWajah_ini-canggihnya-e-ktp-di-negara-negara-eropa.jpg', 'verified');
+(47, 'Abfzbzb', '0888888888123', 'tes@gmail.com', '1222211111111', 'Abcdef@12', '1222211111111_fotoKTP_watermark.png', '1222211111111_fotoWajah_ini-canggihnya-e-ktp-di-negara-negara-eropa.jpg', 'verified');
 
 -- --------------------------------------------------------
 
