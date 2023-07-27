@@ -38,11 +38,11 @@
                     <form method="post">
                     <div class="row">                       
                         <div class="col">
-                            <a id="voteBtn" class="btn fs-3 btn-1" href='vote.php'>Pilih</a>
+                            <a style="width: 120px" id="voteBtn" class="btn fs-3 btn-1" href='vote.php'>Pilih</a>
                         </div>
                        
                         <div class="col">
-                            <a class="btn fs-3 btn-2" href='prediction.php'>Prediksi</a>
+                            <a style='transform: scale(0.9)'class="btn fs-3 btn-2" href='prediction.php'>Prediksi</a>
                         </div>
                     </div>
                     </form>
