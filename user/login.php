@@ -25,7 +25,17 @@
 
         if($select_user->rowCount()>0) {
             if($fetch_user['status'] == 'pending') {
-                $message[] = "Akun anda belum diverifikasi oleh admin!";
+                ?>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script>
+                swal({
+                    title: "Gagal!",
+                    text: "Akun anda belum diverifikasi oleh admin!",
+                    icon: "error",
+                    
+                });      
+                </script>   
+                <?php
             }
             else {
             $query = "SELECT nama, email, user_id FROM users WHERE NIK = ? AND password = ?";

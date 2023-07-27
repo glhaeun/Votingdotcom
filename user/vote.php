@@ -1,5 +1,6 @@
 <?php
     include "../component/php/connect.php";
+    require("../component/php/check.php"); 
 
     if (isset($_GET['category'])){
         $category = $_GET['category'];
@@ -161,12 +162,12 @@ require_once("../component/php/navbar.php");
                         <input type="hidden" name="candidate_id" value="<?= $fetch_candidates['id'];?>">
                         <img src="../img/candidate/<?=$fetch_candidates['foto_calon']?>" alt="">
                         <h4><?=$fetch_candidates['nama_calon']?></h4>
-                        <h5>Calon <?=$fetch_candidates['nama_jabatan']?></h5>
+                        <h5>Calon</h5>
                         </div>
                         <div class="down">
                         <img src="../img/candidate/<?=$fetch_candidates['foto_wakil']?>" alt="">
                         <h4><?=$fetch_candidates['nama_wakil']?></h4>
-                        <h5>Wakil <?=$fetch_candidates['nama_jabatan']?></h5>
+                        <h5>Wakil</h5>
                         </div>
                         <div class="btn">
                         <input type="submit" value="Pilih" name="vote" onclick="return confirm('Are you sure?')">

@@ -5,6 +5,8 @@ include '../component/php/connect.php';
         header('location:landing.php');
     }
 
+    require("../component/php/check.php"); 
+
 ?>
 
 
@@ -221,7 +223,8 @@ h3 {
 
 </style>
 <body>
-<?php require("../component/php/navbar.php"); 
+<?php 
+require("../component/php/navbar.php"); 
 include '../component/php/profile.php';
 include '../component/php/surat_upload.php';
 ?>
@@ -338,7 +341,7 @@ include '../component/php/surat_upload.php';
             </form>
             </div>
             <div class="tab-pane fade" id="change_name" role="tabpanel" aria-labelledby="change_name-tab">
-						<h3 class="mb-4">Perubahan Kata Sandi</h3>
+						<h3 class="mb-4">Perubahan Nama</h3>
             <form action="../component/php/download.php" method="POST">
 						<div class="row">
 								<div class="form-group">
